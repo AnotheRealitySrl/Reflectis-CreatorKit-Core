@@ -61,7 +61,12 @@ namespace Virtuademy.CreatorKit.Worlds.Core.ClientModels
 
         Task EndConnection();
 
-        Task<int> JoinWorld(int worldId, int eventId);
+        /// <summary>
+        /// Joins the world's realtime room and returns the assigned shard, or null when the server
+        /// refuses. The null case replaces a wait that had no exit: the underlying callback fired
+        /// only on success, so a refused join never returned at all.
+        /// </summary>
+        Task<int?> JoinWorld(int worldId, int eventId);
         #endregion
 
         #region Worlds
