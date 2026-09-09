@@ -68,7 +68,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                 //    return f.GetConvertedValue(x) as CustomType;
                 //});
 
-                Type type = IAnalyticsSystem.VerbsDTOs[Verb];
+                Type type = AnalyticDefinitions.VerbsDTOs[Verb];
 
                 if (type != null)
                 {
@@ -115,7 +115,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                     catch (Exception exception)
                     {
                         string message = $"Error during execution of \"{UNIT_TITLE}\": {exception.Message} ";
-                        if (IAnalyticsSystem.VerbsTypes[EAnalyticType.Experience].Contains(Verb))
+                        if (AnalyticDefinitions.VerbsTypes[EAnalyticType.Experience].Contains(Verb))
                         {
                             message = message +
                             $"Remember to call the node {AnalyticGenerateExperienceIDUnit.UNIT_TITLE} to generate the ExperienceID before trying to send Analytics data!";
@@ -135,7 +135,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
 
             Arguments = new List<ValueInput>();
 
-            Type type = IAnalyticsSystem.VerbsDTOs[Verb];
+            Type type = AnalyticDefinitions.VerbsDTOs[Verb];
 
             if (type != null)
             {

@@ -1,34 +1,34 @@
-﻿using Virtuademy.SDK.PlatformApi;
+﻿﻿
+using Virtuademy.SDK.PlatformApi;
 
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Virtuademy.CreatorKit.Worlds.Analytics
 {
     /// <summary>
-    /// Emitting analytics from a world.
+    /// Which payload type belongs to which analytic verb.
     /// </summary>
     /// <remarks>
-    /// <b>The three tables below are read-only, and that is a security property rather than
-    /// tidiness.</b> They were <c>public static</c> mutable <c>Dictionary</c> fields on this
-    /// interface, so any code in the process could replace one outright or edit an entry —
-    /// including an authored Visual Scripting graph, which is the surface the assembly perimeter
-    /// exists to contain.
+    /// <b>These three tables are read-only, and that is a security property rather than
+    /// tidiness.</b> They were <c>public static</c> mutable <c>Dictionary</c> fields, so any code
+    /// in the process could replace one outright or edit an entry - including an authored Visual
+    /// Scripting graph, which is the surface the assembly perimeter exists to contain.
     /// <para>
     /// <see cref="VerbsDTOs"/> is the one that matters: <c>AnalyticSendDataUnit</c> looks a verb up
     /// in it and hands the result to <c>Type.Instantiate()</c> and <c>GetRuntimeFields()</c>, then
-    /// populates those fields from the node's inputs. A writable mapping therefore chose which type
-    /// got reflectively constructed and filled — arbitrary instantiation reachable from a graph. As
-    /// <c>static readonly IReadOnlyDictionary</c> the reference cannot be swapped and the entries
-    /// cannot be edited.
+    /// populates those fields from the node's inputs. A writable mapping therefore chose which
+    /// type got reflectively constructed and filled - arbitrary instantiation reachable from a
+    /// graph. As <c>static readonly IReadOnlyDictionary</c> the reference cannot be swapped and the
+    /// entries cannot be edited.
     /// </para>
     /// <para>
-    /// Measured before changing them: six read sites across the package and the app, and no writes
-    /// anywhere. Nothing was using the mutability.
+    /// They lived on <c>IAnalyticsSystem</c> until that contract moved to the main project. They
+    /// are data a world's nodes read, not part of the system's surface, so they stayed - which is
+    /// the more honest home for them anyway.
     /// </para>
     /// </remarks>
-    public interface IAnalyticsSystem
+    public static class AnalyticDefinitions
     {
         /// <summary>Which verbs belong to which kind of analytic.</summary>
         public static readonly IReadOnlyDictionary<EAnalyticType, IReadOnlyList<EAnalyticVerb>> VerbsTypes =
@@ -73,10 +73,5 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                 { EAnalyticsDisplayableType.Dynamic, typeof(DynamicDisplayableContent) }
             };
 
-        Task GenerateExperienceGUID(string key);
-
-        string GenerateUniqueExperienceGUIDXPlayer(string key);
-
-        void SendAnalytic(EAnalyticVerb verb, AnalyticDTO analytic);
     }
 }

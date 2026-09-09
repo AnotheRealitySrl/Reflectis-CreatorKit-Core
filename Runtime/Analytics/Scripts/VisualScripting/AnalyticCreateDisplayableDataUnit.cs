@@ -1,4 +1,4 @@
-using Virtuademy.SDK.Core.Utilities;
+﻿using Virtuademy.SDK.Core.Utilities;
 using Virtuademy.SDK.PlatformApi;
 
 using System;
@@ -54,7 +54,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                 //    return f.GetConvertedValue(x) as CustomType;
                 //});
 
-                Type type = IAnalyticsSystem.DisplayableDataTypes[displayableType];
+                Type type = AnalyticDefinitions.DisplayableDataTypes[displayableType];
 
                 if (type != null)
                 {
@@ -104,7 +104,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
 
             Arguments = new List<ValueInput>();
 
-            Type type = IAnalyticsSystem.DisplayableDataTypes[displayableType];
+            Type type = AnalyticDefinitions.DisplayableDataTypes[displayableType];
 
             if (type != null)
             {
