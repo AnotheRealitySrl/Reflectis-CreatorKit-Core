@@ -1,5 +1,18 @@
 # Release notes
 
+## v9.0.0
+
+### Changed
+- **Five sibling packages were absorbed into this one**, which is now the whole authoring surface: `Virtuademy-CreatorKit-Worlds-Placeholders` (4.1.0), `-VisualScripting` (2.4.0), `-Tasks` (2.2.1), `-Dialogs` (1.2.0) and `-Analytics` (3.2.0). They live under `Runtime/<Name>` and `Editor/<Name>`; their READMEs and changelogs are kept under `Documentation~/legacy-packages/`. Nothing was rewritten — 389 scripts and the assets beside them moved as they were.
+- **Twelve assemblies became three.** Everything runtime compiles into `Virtuademy.CreatorKit.Worlds.Core`, everything editor into `Virtuademy.CreatorKit.Worlds.CoreEditor`, and `Virtuademy.CreatorKit.Worlds.CoreHybridCLREditor` stays separate because it carries a `HYBRIDCLR_INSTALLED` define constraint the rest must not inherit. Assembly *names* are unchanged, so no consumer reference had to be rewritten: every asmdef reference in the project is written as a GUID, and a moved asmdef keeps its GUID.
+- Core's own placeholder base classes moved from `Runtime/Placeholders` to `Runtime/PlaceholderBases`, which frees the name for the placeholder set that came in and says what they are.
+- The Splines, Quiz and task-scene samples are declared here now, so they stay importable from the Package Manager.
+
+### Breaking
+- **Every published world must be rebuilt.** A built Addressable bundle records each component by assembly, namespace and class, and five assemblies stopped existing. Source projects are unaffected — script references resolve by GUID from the `.meta`.
+- A project that referenced one of the five packages by id in its `manifest.json` no longer resolves it. There is one package to depend on.
+- Namespaces did **not** change in this release, so no `using` in a creator's own scripts breaks, and no Visual Scripting graph does either (a graph records its units by namespace and type, never by assembly).
+
 ## v8.1.0
 
 ### Added

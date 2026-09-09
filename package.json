@@ -1,9 +1,9 @@
 {
   "name": "com.anotherealitysrl.virtuademy-creatorkit-worlds-core",
   "displayName": "Virtuademy-CreatorKit-Worlds-Core",
-  "version": "8.1.0",
+  "version": "9.0.0",
   "unity": "2020.1",
-  "description": "Reflectis Creator Kit Worlds Core module",
+  "description": "Everything a world is authored with: placeholder bases and the placeholder set, the Visual Scripting nodes, the object spawner and interaction contracts, client models, the task and dialog adapters, the analytics contract, and the editor publish tooling. Formerly six packages (Core, Placeholders, VisualScripting, Tasks, Dialogs, Analytics), merged at 9.0.0.",
   "keywords": [
     "unity"
   ],
@@ -17,6 +17,21 @@
       "displayName": "Multiplayer Visual Scripting Sample",
       "description": "Template scene with visual scripting network sample use",
       "path": "Samples~/MultiplayerSceneSample"
+    },
+    {
+      "displayName": "Splines module",
+      "description": "Contains nodes and event units that work with the splines packages of the Unity registry",
+      "path": "Samples~/Splines"
+    },
+    {
+      "displayName": "Quiz module",
+      "description": "Contains nodes and prefabs that work with the quiz and analytics logic. Both now ship in this package, so the sample no longer needs anything installed alongside it",
+      "path": "Samples~/Quizs"
+    },
+    {
+      "displayName": "Sample Task Scene",
+      "description": "Contains a sample scene to show how to use the task system",
+      "path": "TaskSampleScene~"
     }
   ],
   "dependencies": {
