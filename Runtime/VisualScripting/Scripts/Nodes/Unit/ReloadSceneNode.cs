@@ -33,10 +33,9 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            var clientModelSystem = WorldServices.Get<IClientModelSystem>();
 
-            var experience = await clientModelSystem.GetExperienceByAddressableName(WorldServices.Get<IClientModelSystem>().CurrentSession.Experience.Environment.Name/*, flow.GetValue<bool>(IsTenantEnvironment)*/);
-            var multiplayer = WorldServices.Get<IClientModelSystem>().CurrentSession.Experience.Environment.Multiplayer;
+            var experience = await VirtuademyFramework.Current.FindExperienceByAddressableName(VirtuademyFramework.Current.CurrentEnvironmentName/*, flow.GetValue<bool>(IsTenantEnvironment)*/);
+            var multiplayer = VirtuademyFramework.Current.IsCurrentEnvironmentMultiplayer;
             if (experience != null)
             {
                 await IReflectisApplicationManager.Instance.JoinExperience(experience, multiplayer);

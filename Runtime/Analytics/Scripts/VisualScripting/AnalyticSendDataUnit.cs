@@ -110,7 +110,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                     }
                     try
                     {
-                        WorldServices.Get<IAnalyticsSystem>().SendAnalytic(Verb, AnalyticDTO);
+                        VirtuademyFramework.Current.SendAnalytic(Verb, AnalyticDTO);
                     }
                     catch (Exception exception)
                     {

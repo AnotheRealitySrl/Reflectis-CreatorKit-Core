@@ -17,7 +17,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CMEvent = ValueOutput(nameof(CMEvent), (f) => WorldServices.Get<IClientModelSystem>().CurrentSession);
+            CMEvent = ValueOutput(nameof(CMEvent), (f) => VirtuademyFramework.Current.CurrentSession);
         }
     }
 }

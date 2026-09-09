@@ -21,9 +21,9 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CurrentLanguage = ValueOutput<string>(nameof(CurrentLanguage), (flow) => WorldServices.Get<ILocalizationSystem>().GetCurrentLocalization());
-            CurrentLanguageCode = ValueOutput<string>(nameof(CurrentLanguageCode), (flow) => WorldServices.Get<ILocalizationSystem>().GetCurrentLanguageCode());
-            LanguageList = ValueOutput<List<string>>(nameof(LanguageList), f => WorldServices.Get<ILocalizationSystem>().GetLanguagesList());
+            CurrentLanguage = ValueOutput<string>(nameof(CurrentLanguage), (flow) => VirtuademyFramework.Current.CurrentLanguage);
+            CurrentLanguageCode = ValueOutput<string>(nameof(CurrentLanguageCode), (flow) => VirtuademyFramework.Current.CurrentLanguageCode);
+            LanguageList = ValueOutput<List<string>>(nameof(LanguageList), f => VirtuademyFramework.Current.AvailableLanguages);
         }
 
     }

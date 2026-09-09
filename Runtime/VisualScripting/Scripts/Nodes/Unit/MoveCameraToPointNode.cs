@@ -29,7 +29,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            await WorldServices.Get<ICharacterControllerSystem>().MoveCameraToPoint(flow.GetValue<Transform>(TargetTransform));
+            await VirtuademyFramework.Current.MoveCameraToPoint(flow.GetValue<Transform>(TargetTransform));
         }
     }
 }

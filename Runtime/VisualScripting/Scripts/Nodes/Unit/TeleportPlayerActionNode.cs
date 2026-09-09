@@ -45,10 +45,10 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             runningFlows.Add(flow);
 
-            WorldServices.Get<IFadeSystem>().FadeToBlack(() =>
+            VirtuademyFramework.Current.FadeToBlack(() =>
             {
-                WorldServices.Get<ICharacterControllerSystem>().MoveCharacter(new Pose(flow.GetValue<Transform>(TransformVal).position, flow.GetValue<Transform>(TransformVal).rotation));
-                WorldServices.Get<IFadeSystem>().FadeFromBlack(() => runningFlows.Remove(flow));
+                VirtuademyFramework.Current.MovePlayer(new Pose(flow.GetValue<Transform>(TransformVal).position, flow.GetValue<Transform>(TransformVal).rotation));
+                VirtuademyFramework.Current.FadeFromBlack(() => runningFlows.Remove(flow));
             });
 
             yield return new WaitUntil(() => !runningFlows.Contains(flow));

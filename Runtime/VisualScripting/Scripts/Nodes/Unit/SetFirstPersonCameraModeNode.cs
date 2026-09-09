@@ -21,7 +21,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<ICharacterControllerSystem>().SetFirstPersonCameraMode();
+                VirtuademyFramework.Current.SetFirstPersonCamera();
                 return OutputTrigger;
             });
 

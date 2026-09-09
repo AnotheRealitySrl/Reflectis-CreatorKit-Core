@@ -20,7 +20,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterLeftHand = ValueOutput<Transform>(nameof(CharacterLeftHand), (flow) => WorldServices.Get<IAvatarSystem>().AvatarInstance.CharacterReference.LeftInteractorReference);
+            CharacterLeftHand = ValueOutput<Transform>(nameof(CharacterLeftHand), (flow) => VirtuademyFramework.Current.PlayerLeftHandTransform);
         }
     }
 }

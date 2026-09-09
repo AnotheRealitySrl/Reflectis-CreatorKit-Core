@@ -32,7 +32,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IClientModelSystem>().CreateLeaderboardRecord(new CMLeaderboardRecord()
+                VirtuademyFramework.Current.CreateLeaderboardRecord(new CMLeaderboardRecord()
                 {
                     LeaderboardKey = f.GetValue<string>(LeaderboardKey),
                     Data = f.GetValue<float>(Data)

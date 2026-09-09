@@ -24,8 +24,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                var networkSystem = WorldServices.Get<INetworkingSystem>();
-                if (networkSystem != null && networkSystem.IsMasterClient)
+                if (VirtuademyFramework.Current.IsMasterClient)
                 {
                     return True;
                 }

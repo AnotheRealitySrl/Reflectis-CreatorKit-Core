@@ -29,9 +29,9 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                InputSettings currentUserSettings = WorldServices.Get<ICharacterControllerSystem>().GetCurrentSettings();
+                InputSettings currentUserSettings = VirtuademyFramework.Current.GetCurrentInputSettings();
 
-                WorldServices.Get<ICharacterControllerSystem>().EnableCharacterMovement(f.GetValue<bool>(Enable), currentUserSettings);
+                VirtuademyFramework.Current.EnablePlayerMovement(f.GetValue<bool>(Enable), currentUserSettings);
                 return OutputTrigger;
             });
 

@@ -40,7 +40,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {               
                     InputSettings newInput = new InputSettings(!f.GetValue<bool>(StaticCamera), false, !f.GetValue<bool>(StaticCamera), !f.GetValue<bool>(StaticCamera), f.GetValue<bool>(ConstrainedRotation));
-                    WorldServices.Get<ICharacterControllerSystem>().DisableAllButCamera(newInput);                                  
+                    VirtuademyFramework.Current.DisableAllInputButCamera(newInput);                                  
                     return OutputTrigger;
             });
            

@@ -41,7 +41,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override UnityEvent<PlayerData> GetEvent(GraphReference reference)
         {
-            return WorldServices.Get<INetworkingSystem>().OnOtherPlayerJoinShard;
+            return VirtuademyFramework.Current.OtherPlayerEntered;
         }
 
         protected override (int, string) GetArguments(GraphReference reference, PlayerData playerData)

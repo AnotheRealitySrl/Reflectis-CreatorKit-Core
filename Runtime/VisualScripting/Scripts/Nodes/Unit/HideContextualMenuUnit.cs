@@ -22,7 +22,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IContextualMenuSystem>().HideContextualMenu();
+                VirtuademyFramework.Current.HideContextualMenu();
                 return OutputTrigger;
             });
 

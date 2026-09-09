@@ -18,7 +18,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterHeadReference = ValueOutput<Transform>(nameof(CharacterHeadReference), (flow) => WorldServices.Get<IAvatarSystem>().AvatarInstance.CharacterReference.HeadReference);
+            CharacterHeadReference = ValueOutput<Transform>(nameof(CharacterHeadReference), (flow) => VirtuademyFramework.Current.PlayerHeadTransform);
         }
     }
 }

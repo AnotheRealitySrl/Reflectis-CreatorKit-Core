@@ -27,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             Data = ValueOutput(nameof(Data),
                 (f) =>
             {
-                return WorldServices.Get<IClientModelSystem>().GetMySaveData(f.GetValue<string>(Key));
+                return VirtuademyFramework.Current.GetMySaveData(f.GetValue<string>(Key));
             });
         }
     }

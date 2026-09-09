@@ -34,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override UnityEvent<IVisualScriptingInteractable> GetEvent(GraphReference reference)
         {
-            return WorldServices.Get<IVisualScriptingInteractionSystem>().OnSelectedInteractableChange;
+            return VirtuademyFramework.Current.SelectedInteractableChanged;
         }
 
         protected override IVisualScriptingInteractable GetArguments(GraphReference reference, IVisualScriptingInteractable eventData)

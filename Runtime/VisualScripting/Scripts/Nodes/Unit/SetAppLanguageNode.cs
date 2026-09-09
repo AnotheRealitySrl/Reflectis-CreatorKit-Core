@@ -34,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<ILocalizationSystem>().SetLanguage(f.GetValue<string>(LanguageChoice));
+                VirtuademyFramework.Current.SetLanguage(f.GetValue<string>(LanguageChoice));
 
                 return OutputTrigger;
             });

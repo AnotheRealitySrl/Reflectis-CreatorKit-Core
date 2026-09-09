@@ -53,17 +53,16 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private async void CallAwaitableMethod(Flow flow)
         {
-            var helpSystem = WorldServices.Get<IHelpSystem>();
 
             if (flow.GetValue<bool>(Enable))
             {
-                await helpSystem.CallGetHelp();
+                await VirtuademyFramework.Current.OpenHelp();
 
                 awaitableMethodRuning = true;
             }
             else
             {
-                await helpSystem.CallCloseGetHelp();
+                await VirtuademyFramework.Current.CloseHelp();
 
                 awaitableMethodRuning = true;
             }

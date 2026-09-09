@@ -22,7 +22,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<ICharacterControllerSystem>().SetDefaultSettingsAsActive();
+                VirtuademyFramework.Current.ApplyDefaultInputSettings();
                 return OutputTrigger;
             });
         

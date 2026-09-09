@@ -34,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            //WorldServices.Get<VisualScriptingInteractableS>().ChangeCameraSpeed(flow.GetValue<ManipulablePlaceholder>(Interactable));
+            //VirtuademyFramework.Current.ChangeCameraSpeed(flow.GetValue<ManipulablePlaceholder>(Interactable));
             return outputTrigger;
         }
     }

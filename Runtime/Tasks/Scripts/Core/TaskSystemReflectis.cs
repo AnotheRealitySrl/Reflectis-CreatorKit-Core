@@ -26,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.Tasks
             }
             get
             {
-                return _isNetworked && WorldServices.Get<IClientModelSystem>().CurrentSession.Multiplayer;
+                return _isNetworked && VirtuademyFramework.Current.IsCurrentSessionMultiplayer;
             }
         }
 

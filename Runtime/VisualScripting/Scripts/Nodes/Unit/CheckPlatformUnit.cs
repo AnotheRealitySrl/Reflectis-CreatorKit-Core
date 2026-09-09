@@ -27,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
     {
       InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
       {
-        switch (WorldServices.Get<IPlatformSystem>().RuntimePlatform)
+        switch (VirtuademyFramework.Current.RuntimePlatform)
         {
           case ESupportedPlatform.VR:
             return OutputTriggerVR;
@@ -82,7 +82,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
   //        InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
   //        {
-  //            return supportedPlatformsOutputs[WorldServices.Get<IPlatformSystem>().RuntimePlatform];
+  //            return supportedPlatformsOutputs[VirtuademyFramework.Current.RuntimePlatform];
   //        });
 
   //        Outputs = new List<ControlOutput>();

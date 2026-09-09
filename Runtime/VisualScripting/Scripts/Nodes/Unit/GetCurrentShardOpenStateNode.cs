@@ -16,7 +16,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            IsOpen = ValueOutput(nameof(IsOpen), (f) => !WorldServices.Get<IClientModelSystem>().CurrentShard?.IsClosed);
+            IsOpen = ValueOutput(nameof(IsOpen), (f) => VirtuademyFramework.Current.IsCurrentShardOpen);
         }
     }
 }

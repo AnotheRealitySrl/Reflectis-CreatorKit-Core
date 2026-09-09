@@ -27,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IClientModelSystem>().DeleteMySaveData(
+                VirtuademyFramework.Current.DeleteMySaveData(
                     f.GetValue<string>(Key));
                 return OutputTrigger;
             });

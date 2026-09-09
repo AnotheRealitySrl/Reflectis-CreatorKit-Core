@@ -16,7 +16,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            SessionId = ValueOutput(nameof(SessionId), (f) => WorldServices.Get<IClientModelSystem>().SessionId);
+            SessionId = ValueOutput(nameof(SessionId), (f) => VirtuademyFramework.Current.SessionId);
         }
     }
 }

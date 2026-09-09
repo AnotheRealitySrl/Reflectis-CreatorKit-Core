@@ -42,7 +42,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            _addedValue = WorldServices.Get<IEquippableSystem>().AddItemToContainerInventory(flow.GetValue<PickablePlaceholder>(Pickable));
+            _addedValue = VirtuademyFramework.Current.AddPickableToInventory(flow.GetValue<PickablePlaceholder>(Pickable));
             return outputTrigger;
         }
     }

@@ -30,7 +30,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             SyncedObject = ValueInput<SyncedObject>(nameof(SyncedObject), null).NullMeansSelf();
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                if (!WorldServices.Get<IClientModelSystem>().CurrentSession.Multiplayer
+                if (!VirtuademyFramework.Current.IsCurrentSessionMultiplayer
                 || !f.GetValue<SyncedObject>(SyncedObject).IsNetworked
                 || f.GetValue<SyncedObject>(SyncedObject).OnCheckOwnershipFunction())
                 {

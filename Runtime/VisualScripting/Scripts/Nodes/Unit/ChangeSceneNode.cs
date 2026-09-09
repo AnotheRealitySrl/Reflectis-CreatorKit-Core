@@ -30,9 +30,8 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            var clientModelSystem = WorldServices.Get<IClientModelSystem>();
 
-            var experience = await clientModelSystem.GetExperienceByAddressableName(flow.GetValue<string>(SceneAddressableName));
+            var experience = await VirtuademyFramework.Current.FindExperienceByAddressableName(flow.GetValue<string>(SceneAddressableName));
 
             if (experience != null)
             {

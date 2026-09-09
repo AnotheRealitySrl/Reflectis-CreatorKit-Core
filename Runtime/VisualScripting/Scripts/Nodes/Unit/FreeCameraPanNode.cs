@@ -55,7 +55,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            await WorldServices.Get<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform), flow.GetValue<float>(MaxZoom),
+            await VirtuademyFramework.Current.EnterCameraPan(flow.GetValue<Transform>(TargetTransform), flow.GetValue<float>(MaxZoom),
                 flow.GetValue<float>(MinZoom), flow.GetValue<float>(MaxYRotation), flow.GetValue<float>(MinYRotation), flow.GetValue<float>(MaxXRotation), flow.GetValue<float>(MinXRotation), true);
         }
     }

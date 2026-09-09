@@ -8,19 +8,19 @@ namespace Virtuademy.CreatorKit.Worlds.Placeholders
     {
         public void SetDefaultInputs()
         {
-            WorldServices.Get<ICharacterControllerSystem>().SetDefaultSettingsAsActive();
+            VirtuademyFramework.Current.ApplyDefaultInputSettings();
         }
 
         public void SetStaticCamera ()
         {
             InputSettings newInput = new InputSettings(false, false, false, false, false);
-            WorldServices.Get<ICharacterControllerSystem>().DisableAllButCamera(newInput);
+            VirtuademyFramework.Current.DisableAllInputButCamera(newInput);
         }
 
         public void SetRotationCamera(bool constrainedRotation)
         {
             InputSettings newInput = new InputSettings(true, false, false, false, constrainedRotation);
-            WorldServices.Get<ICharacterControllerSystem>().DisableAllButCamera(newInput);
+            VirtuademyFramework.Current.DisableAllInputButCamera(newInput);
         }
     }
 }

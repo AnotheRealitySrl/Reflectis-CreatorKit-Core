@@ -29,14 +29,14 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override UnityEvent GetEvent(GraphReference reference)
         {
-            if (WorldServices.Get<IHelpSystem>() != null)
+            if (VirtuademyFramework.Current.IsHelpAvailable)
             {
             }
             else
             {
                 return null;
             }
-            return WorldServices.Get<IHelpSystem>().OnFinishedClosing;
+            return VirtuademyFramework.Current.HelpClosed;
         }
 
         public override void Uninstantiate(GraphReference instance)

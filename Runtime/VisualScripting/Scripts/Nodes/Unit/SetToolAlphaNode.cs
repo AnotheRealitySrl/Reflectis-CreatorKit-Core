@@ -26,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IToolSystem>().SetInventoryAlpha(f.GetValue<float>(Alpha));
+                VirtuademyFramework.Current.SetInventoryAlpha(f.GetValue<float>(Alpha));
 
                 return OutputTrigger;
             });

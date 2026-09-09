@@ -26,14 +26,14 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IClientModelSystem>().EnableShard(f.GetValue<bool>(Open));
+                VirtuademyFramework.Current.SetCurrentShardOpen(f.GetValue<bool>(Open));
                 //if (f.GetValue<bool>(Open))
                 //{
-                //    WorldServices.Get<INetworkingSystem>().OpenCurrentShard();
+                //    VirtuademyFramework.Current.SetCurrentShardOpen(true);
                 //}
                 //else
                 //{
-                //    WorldServices.Get<INetworkingSystem>().CloseCurrentShard();
+                //    VirtuademyFramework.Current.SetCurrentShardOpen(false);
                 //}
                 return OutputTrigger;
             });

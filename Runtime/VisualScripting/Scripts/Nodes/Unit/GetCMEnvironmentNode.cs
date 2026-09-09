@@ -17,7 +17,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CMEnvironment = ValueOutput(nameof(CMEnvironment), (f) => WorldServices.Get<IClientModelSystem>().CurrentSession.Experience.Environment);
+            CMEnvironment = ValueOutput(nameof(CMEnvironment), (f) => VirtuademyFramework.Current.CurrentEnvironment);
         }
     }
 }

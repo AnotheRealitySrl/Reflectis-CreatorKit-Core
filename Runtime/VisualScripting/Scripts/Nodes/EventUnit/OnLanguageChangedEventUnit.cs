@@ -28,10 +28,10 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             base.Definition();
 
-            CurrentLanguage = ValueOutput<string>(nameof(CurrentLanguage), (flow) => WorldServices.Get<ILocalizationSystem>().GetCurrentLocalization());
-            CurrentLanguageCode = ValueOutput<string>(nameof(CurrentLanguageCode), (flow) => WorldServices.Get<ILocalizationSystem>().GetCurrentLanguageCode());
-            PreviousLanguage = ValueOutput<string>(nameof(PreviousLanguage), (flow) => WorldServices.Get<ILocalizationSystem>().GetPreviousLanguage());
-            PreviousLanguageCode = ValueOutput<string>(nameof(PreviousLanguageCode), (flow) => WorldServices.Get<ILocalizationSystem>().GetPreviousLanguageCode());
+            CurrentLanguage = ValueOutput<string>(nameof(CurrentLanguage), (flow) => VirtuademyFramework.Current.CurrentLanguage);
+            CurrentLanguageCode = ValueOutput<string>(nameof(CurrentLanguageCode), (flow) => VirtuademyFramework.Current.CurrentLanguageCode);
+            PreviousLanguage = ValueOutput<string>(nameof(PreviousLanguage), (flow) => VirtuademyFramework.Current.PreviousLanguage);
+            PreviousLanguageCode = ValueOutput<string>(nameof(PreviousLanguageCode), (flow) => VirtuademyFramework.Current.PreviousLanguageCode);
         }
 
         public override EventHook GetHook(GraphReference reference)
@@ -56,13 +56,13 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             //return new EventHook(eventName);
             Debug.LogError("EventHook, language change...");
             return new EventHook("lANGUAGEChange" + this.ToString().Split("EventUnit")[0]);
-            //return WorldServices.Get<ILocalizationSystem>().OnLanguageChanged;
+            //return VirtuademyFramework.Current.LanguageChanged;
         }
 
         protected override UnityEvent<string> GetEvent(GraphReference reference)
         {
             Debug.LogError("GET EVENT CALLED");
-            if(WorldServices.Get<ILocalizationSystem>()!= null)
+            if (VirtuademyFramework.Current.IsLocalizationAvailable)
             {
                 Debug.LogError("The system is not null");
             }
@@ -70,7 +70,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             {
                 Debug.LogError("NULL");
             }
-            return WorldServices.Get<ILocalizationSystem>().OnLanguageChanged;
+            return VirtuademyFramework.Current.LanguageChanged;
         }
 
         protected override string GetArguments(GraphReference reference, string data)

@@ -15,7 +15,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
     {
         protected async override Task AwaitableAction(Flow flow)
         {
-            await WorldServices.Get<ICharacterControllerSystem>().GoToSetMovementState();
+            await VirtuademyFramework.Current.ExitCameraPan();
         }
     }
 }

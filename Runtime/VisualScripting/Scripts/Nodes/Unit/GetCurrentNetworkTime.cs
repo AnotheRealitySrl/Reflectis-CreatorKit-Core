@@ -27,9 +27,9 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             NetworkedTime = ValueOutput<double>(nameof(NetworkedTime), f =>
             {
                 if (IReflectisApplicationManager.Instance.State == SDK.Core.ApplicationManagement.EApplicationState.Online
-                && WorldServices.Get<IClientModelSystem>().CurrentSession.Multiplayer)
+                && VirtuademyFramework.Current.IsCurrentSessionMultiplayer)
                 {
-                    return WorldServices.Get<INetworkingSystem>().GetSharedNetworkTime();
+                    return VirtuademyFramework.Current.SharedNetworkTime;
                 }
                 return Time.time;
             });

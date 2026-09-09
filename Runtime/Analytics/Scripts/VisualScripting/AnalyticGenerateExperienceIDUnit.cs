@@ -44,7 +44,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
             }
             else
             {
-                await WorldServices.Get<IAnalyticsSystem>().GenerateExperienceGUID(desiredKey);
+                await VirtuademyFramework.Current.GenerateExperienceGuid(desiredKey);
             }
         }
 

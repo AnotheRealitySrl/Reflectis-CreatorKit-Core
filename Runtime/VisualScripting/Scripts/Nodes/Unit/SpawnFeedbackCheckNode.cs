@@ -40,7 +40,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            WorldServices.Get<IEquippableSystem>().DisplayFeedback(flow.GetValue<Transform>(SpawnTransform), flow.GetValue<bool>(Correctness));
+            VirtuademyFramework.Current.DisplayPickFeedback(flow.GetValue<Transform>(SpawnTransform), flow.GetValue<bool>(Correctness));
             return outputTrigger;
         }
     }

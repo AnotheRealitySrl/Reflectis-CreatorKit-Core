@@ -35,7 +35,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected async override Task AwaitableAction(Flow flow)
         {
-            cmUserData = await WorldServices.Get<IClientModelSystem>().GetUserData(flow.GetValue<int>(UserID));
+            cmUserData = await VirtuademyFramework.Current.GetUser(flow.GetValue<int>(UserID));
         }
 
     }

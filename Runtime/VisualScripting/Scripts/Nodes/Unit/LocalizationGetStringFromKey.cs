@@ -26,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             Translation = ValueOutput<string>(nameof(Translation), (f) =>
                 {
-                    return WorldServices.Get<ILocalizationSystem>().GetStringFromExternalKey(f.GetValue<string>(Key));
+                    return VirtuademyFramework.Current.Translate(f.GetValue<string>(Key));
                 });
         }
     }

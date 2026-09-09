@@ -36,7 +36,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            WorldServices.Get<ICharacterControllerSystem>().ChangeCameraSpeed(flow.GetValue<float>(XSpeed), flow.GetValue<float>(YSpeed));
+            VirtuademyFramework.Current.ChangeCameraSpeed(flow.GetValue<float>(XSpeed), flow.GetValue<float>(YSpeed));
             return outputTrigger;
         }
     }

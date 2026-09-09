@@ -29,7 +29,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            await WorldServices.Get<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform));
+            await VirtuademyFramework.Current.EnterCameraPan(flow.GetValue<Transform>(TargetTransform));
         }
     }
 }

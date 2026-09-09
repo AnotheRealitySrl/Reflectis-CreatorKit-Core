@@ -32,7 +32,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IClientModelSystem>().SetMySaveData(
+                VirtuademyFramework.Current.SetMySaveData(
                     f.GetValue<string>(Key),
                     f.GetValue<object>(Value));
                 return OutputTrigger;

@@ -34,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             bool fadeDone = false;
 
-            WorldServices.Get<IFadeSystem>().FadeFromBlack(() => fadeDone = true);
+            VirtuademyFramework.Current.FadeFromBlack(() => fadeDone = true);
 
             yield return new WaitUntil(() => fadeDone == true);
 

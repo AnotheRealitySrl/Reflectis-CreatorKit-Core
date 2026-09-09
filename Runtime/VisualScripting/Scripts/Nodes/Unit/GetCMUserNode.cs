@@ -17,7 +17,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CMUser = ValueOutput(nameof(CMUser), (f) => WorldServices.Get<IClientModelSystem>().UserData);
+            CMUser = ValueOutput(nameof(CMUser), (f) => VirtuademyFramework.Current.LocalUser);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                WorldServices.Get<IAvatarSystem>().EnableOtherAvatarsMeshes(f.GetValue<bool>(Enable));
+                VirtuademyFramework.Current.ShowOtherAvatars(f.GetValue<bool>(Enable));
 
                 return OutputTrigger;
             });

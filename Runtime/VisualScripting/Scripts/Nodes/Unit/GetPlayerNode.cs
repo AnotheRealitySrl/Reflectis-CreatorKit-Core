@@ -20,7 +20,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => WorldServices.Get<IAvatarSystem>().AvatarInstance.CharacterReference.transform);
+            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => VirtuademyFramework.Current.PlayerTransform);
         }
     }
 }
