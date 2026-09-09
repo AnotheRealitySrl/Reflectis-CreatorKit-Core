@@ -130,11 +130,22 @@ therefore fails the same way a graph would — no special grace.
 - **`PlayerCount` was removed** from the session group. It was on the first slice with no node
   behind it, which is the rule at the top of this file failing quietly the first time it was
   applied.
-- **No negative test.** `DllVerification/README.md` asks for red-team cases against the engine, and
-  the package plan asks the test-env project to publish a script that deliberately reaches for
-  `SM`, `AuthenticationSystem` and `System.IO` and to pass only when the publish is **rejected**.
-  Neither exists yet, so the claim "a script cannot reach anything else" is currently supported by
-  reading `policy.json`, not by a test.
+- ~~**No negative test.**~~ **Half closed 2026-09-09**, and the half that was missing was not the
+  half this bullet claimed. `DllVerification` already had 45 tests against the engine, synthesizing
+  subject assemblies with Cecil, including `System.IO`. What none of them did was name a
+  first-party symbol, so the sentence people rely on was matched against a prefix list by eye.
+  `PerimeterRedTeamTests` now pins it: `SM` refused as both an unlisted assembly and a denied
+  namespace, the authentication system, this package under its `Virtuademy.SDK.Environments.*`
+  names, the backend behind this facade, `Task` — and the two positives that had no test at all,
+  that **this assembly is reachable** and that no denied prefix swallows it. Each asserts the
+  denial rather than the refusal, because with the denials deleted the default deny still refuses
+  and the weaker assertions could not tell the difference; verified by mutating `policy.json`, not
+  by watching them pass.
+
+  **Still open**: the end-to-end half. A real script, in a real project, rejected by a real
+  publish — the test-env project's job, and the only thing that covers the editor-side verifier,
+  the upload and the endpoint. And per ADR 0019 the enforced policy is `policy.json` **plus**
+  operator deltas that can loosen it, so no unit test speaks for a given deployment.
 - **`policy.json` allows the bare assembly name `HotUpdate`**, while `HotUpdateDllLocator`
   documents that Unity compiles the hot-update assembly as `HotUpdate_<productGUID>`. Whether that
   entry is dead depends on whether the engine matches an assembly's own name or only its
