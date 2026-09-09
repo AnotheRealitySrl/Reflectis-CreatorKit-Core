@@ -13,9 +13,15 @@ static Mono.Cecil scan before anything runs. That whitelist has always **allowed
 `Virtuademy.ClientModels` outright.
 
 Since the package became `Virtuademy-SDK-Environments` (10.0.0) its own namespaces sit under the
-`Virtuademy.SDK` denial, so the perimeter no longer leans on the `Virtuademy.CreatorKit` entry —
-which is now dead, and can come out of `policy.json` on its next pass. The whitelist and the
-package's shape agree by construction rather than by coincidence.
+`Virtuademy.SDK` denial, so the perimeter no longer leans on the `Virtuademy.CreatorKit` entry to
+cover this package. That entry is **not** dead, though — two application types still live in
+`Virtuademy.CreatorKit.Core`, and all eight first-party denied prefixes were measured against the
+whole Unity tree on 2026-09-09 and cover live code. `policy.json` needs no change.
+
+One thing to know before touching those denials: they are evaluated **before** the allow list, so
+denying `Virtuademy` wholesale would reject this assembly's namespace too and disable every
+interpreted script — without an error anyone would connect to the cause. See
+`DllVerification/README.md`.
 
 Until now that allowance pointed at nothing: no such assembly existed. The perimeter was therefore
 maximal by accident — a script could reach `mscorlib`, a slice of `UnityEngine`, TextMeshPro and
