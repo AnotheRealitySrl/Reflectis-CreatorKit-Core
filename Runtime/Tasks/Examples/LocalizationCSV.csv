@@ -1,0 +1,14 @@
+Key,Type,Desc,Italian [it],English [en]
+YellowBoxTask,Text,,Primi passi,First steps
+GrabTaskNode,Text,,Afferra il cubo giallo,Grab the yellow cube
+TriggerTaskNode,Text,,Porta il cubo che hai afferrato nel punto indicato,Bring the grabbed cube to the highlighted point
+BoxesTask,Text,,Porta tutti i Box,Bring all the boxes
+WhiteBoxTask,Text,,Porta il cubo bianco nel punto indicato,Bring the white cube to the highlighted point
+BlackBoxTask,Text,,Porta il cubo nero nel punto indicato,Bring the black cube to the highlighted point
+TimeTaskNode,Text,,Aspetta 3 secondi,Wait 3 seconds
+AnimatorTaskNode,Text,,Esempio Animazione,Animation Example
+UITaskNode,Text,,Esempio Task UI,UI's Task Example
+PressButtonTask,Text,,Bottone Uno!,First Button
+PressSecondButtonTask,Text,,Bottone Due!,Second Button
+VisualScriptTask,Text,,Esempio Task VS Script,VS Scripting Example
+VSScriptGrabTask,Text,,Afferra il cubo,Grab the cube

@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &517459844117836124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00080718903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.101458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323849392332981646, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493688973641239346, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_Name
+      value: QuizPanel Multianswer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614102389689035211, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Layout: <b>Horizontal</b> with <b>Line</b> answers'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizElementLayout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: maxSelectableAnswers
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: minSelectableAnswers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: allowMultipleSelection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.data[1].scoreIfGood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.data[2].scoreIfGood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.data[3].scoreIfGood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.data[1].correctAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016365072287221363, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: quizAnswers.Array.data[2].correctAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525976888695581882, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Selections: <b>1</b> to <b>1</b>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472976248643675605, guid: 52c432bf3eee6f446badb042bce9c126,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Max Answer items: <b>4</b> out of <b>4</b>'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52c432bf3eee6f446badb042bce9c126, type: 3}
