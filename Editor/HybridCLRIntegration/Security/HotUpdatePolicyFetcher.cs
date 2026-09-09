@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-using Virtuademy.SDK.TenantConfiguration.Editor;
+using Virtuademy.CreatorKit.Worlds.Core.Editor;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;

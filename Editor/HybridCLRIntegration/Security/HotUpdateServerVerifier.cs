@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-using Virtuademy.SDK.TenantConfiguration.Editor;
+using Virtuademy.CreatorKit.Worlds.Core.Editor;
 using System;
 using System.Collections.Generic;
 using System.Net;

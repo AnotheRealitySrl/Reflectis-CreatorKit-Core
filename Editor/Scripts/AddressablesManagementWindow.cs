@@ -2,7 +2,6 @@ using Newtonsoft.Json;
 using Virtuademy.CreatorKit.Worlds.CoreEditor;
 using Virtuademy.SDK.PlatformApi;
 using Virtuademy.SDK.TenantConfiguration;
-using Virtuademy.SDK.TenantConfiguration.Editor;
 using Renci.SshNet;
 using System;
 using System.Collections.Generic;
