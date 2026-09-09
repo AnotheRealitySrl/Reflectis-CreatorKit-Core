@@ -218,7 +218,7 @@ namespace Virtuademy.SDK.Environments.Editor
     }
 
     [CustomEditor(typeof(AddressablesBundleScriptableObject))]
-    public class AddressablesBundleScriptableObjectEditor : Editor
+    public class AddressablesBundleScriptableObjectEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
