@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
-using static Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner.IObjectSpawnerSystem;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 {

@@ -7,7 +7,6 @@ using Virtuademy.SDK.Core;
 using Virtuademy.SDK.Core.ApplicationManagement;
 using Virtuademy.SDK.PlatformApi;
 
-using static Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner.IObjectSpawnerSystem;
 
 using System;
 using System.Collections.Generic;
@@ -301,16 +300,15 @@ namespace Virtuademy.CreatorKit.Worlds
 
         /// <summary>Spawns one of the platform's own prefabs.</summary>
         /// <remarks>
-        /// <b>Do not "tidy" <c>EPrefabIdentifier</c> out of <c>IObjectSpawnerSystem</c>.</b> It is
-        /// declared *nested inside* that interface, which is why this file needs a
-        /// <c>using static</c> to see it, and lifting it to a top-level type would look like an
-        /// improvement and break data:
-        /// <c>Assets/_Project/ObjectSpawner/ScriptableObjects/ReflectisPrefabPool.asset</c> stores
-        /// its dictionary's key type by name, spelled
-        /// <c>…ObjectSpawner.IObjectSpawnerSystem+EPrefabIdentifier</c>. Renaming the type empties
-        /// the prefab pool at load, silently. When <c>IObjectSpawnerSystem</c> moves to the main
-        /// project the enum has to stay here, and that move needs the asset migrated in the same
-        /// commit.
+        /// <c>EPrefabIdentifier</c> stays in this package while <c>IObjectSpawnerSystem</c> lives in
+        /// the main project — a world is authored against the identifier, and the system that
+        /// honours it is the application's. It was *nested inside* that interface until the move,
+        /// and un-nesting it changed a string that
+        /// <c>Assets/_Project/ObjectSpawner/ScriptableObjects/ReflectisPrefabPool.asset</c> stores:
+        /// that asset records its dictionary's key type by name and assembly, and read
+        /// <c>…ObjectSpawner.IObjectSpawnerSystem+EPrefabIdentifier,
+        /// Virtuademy.CreatorKit.Worlds.Core</c>. The asset was migrated in the same commit; the
+        /// namespace and the assembly were left alone so the migration is one substitution.
         /// </remarks>
         Task<GameObject> SpawnObject(EPrefabIdentifier prefabId,
                                      Vector3 position,
