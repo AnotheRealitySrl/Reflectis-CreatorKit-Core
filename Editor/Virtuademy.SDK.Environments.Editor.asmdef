@@ -1,6 +1,6 @@
 {
-    "name": "Virtuademy.CreatorKit.Worlds.CoreEditor",
-    "rootNamespace": "Virtuademy.CreatorKit.Worlds.CoreEditor",
+    "name": "Virtuademy.SDK.Environments.Editor",
+    "rootNamespace": "Virtuademy.SDK.Environments.Editor",
     "references": [
         "GUID:69448af7b92c7f342b298e06a37122aa",
         "GUID:e1e4f83f6c2796445b9ea45a4dca9090",

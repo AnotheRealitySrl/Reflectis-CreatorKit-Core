@@ -3,7 +3,7 @@ using Virtuademy.SDK.PlatformApi;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.Analytics
+namespace Virtuademy.SDK.Environments.Analytics
 {
     [UnitTitle("Reflectis Create:" + nameof(XAPIStatement))]
     [UnitSurtitle(nameof(XAPIStatement))]

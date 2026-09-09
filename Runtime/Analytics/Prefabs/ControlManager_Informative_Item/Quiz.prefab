@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 1353090527
 --- !u!4 &7413522171032445950 stripped
 Transform:

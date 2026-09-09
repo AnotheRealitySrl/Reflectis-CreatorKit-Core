@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Analytics
+namespace Virtuademy.SDK.Environments.Analytics
 {
     [UnitTitle(UNIT_TITLE)]
     [UnitSurtitle("Reflectis Analytic")]

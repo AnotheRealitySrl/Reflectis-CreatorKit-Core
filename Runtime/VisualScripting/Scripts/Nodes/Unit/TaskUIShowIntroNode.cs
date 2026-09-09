@@ -1,8 +1,8 @@
-﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Task: Show Introduction")]
     [UnitSurtitle("Tasks")]

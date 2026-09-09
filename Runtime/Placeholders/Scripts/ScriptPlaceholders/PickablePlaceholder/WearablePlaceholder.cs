@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [RequireComponent(typeof(PickablePlaceholder))]
     public class WearablePlaceholder : SceneComponentPlaceholderNetwork

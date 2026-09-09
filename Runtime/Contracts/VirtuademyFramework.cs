@@ -1,6 +1,6 @@
 using System;
 
-namespace Virtuademy.CreatorKit.Worlds
+namespace Virtuademy.SDK.Environments
 {
     /// <summary>
     /// How an authored world reaches <see cref="IVirtuademyFramework"/>.
@@ -12,7 +12,7 @@ namespace Virtuademy.CreatorKit.Worlds
     /// own content installs anything.
     /// </para>
     /// <para>
-    /// It lives in namespace <c>Virtuademy.CreatorKit.Worlds</c>, the common ancestor of every
+    /// It lives in namespace <c>Virtuademy.SDK.Environments</c>, the common ancestor of every
     /// namespace in this package, so every call site resolves it by namespace walk-up with no
     /// <c>using</c> added.
     /// </para>

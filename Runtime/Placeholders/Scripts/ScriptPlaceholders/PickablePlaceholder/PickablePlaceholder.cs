@@ -3,9 +3,9 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.Events;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IManipulable;
+using static Virtuademy.SDK.Environments.Interaction.IManipulable;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [RequireComponent(typeof(InteractablePlaceholder), typeof(ManipulablePlaceholder))]
     public class PickablePlaceholder : SceneComponentPlaceholderNetwork

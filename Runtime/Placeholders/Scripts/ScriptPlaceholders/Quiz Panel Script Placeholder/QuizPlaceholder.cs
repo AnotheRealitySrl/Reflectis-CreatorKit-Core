@@ -17,7 +17,7 @@ using Virtuademy.SDK.Core.Utilities;
 using UnityEditor;
 #endif
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public enum EQuizLayout
     {

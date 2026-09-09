@@ -2,7 +2,7 @@
 
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks.Editor
+namespace Virtuademy.SDK.Environments.Tasks.Editor
 {
     [CustomEditor(typeof(TaskSystemReflectis))]
     public class TaskSystemReflectisEditor : TaskSystemEditor { }

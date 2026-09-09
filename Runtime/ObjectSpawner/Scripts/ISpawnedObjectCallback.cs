@@ -1,4 +1,4 @@
-namespace Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner
+namespace Virtuademy.SDK.Environments.ObjectSpawner
 {
     public interface ISpawnedObjectCallback
     {

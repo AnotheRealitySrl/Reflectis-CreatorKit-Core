@@ -1,5 +1,5 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core;
-using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments;
+using Virtuademy.SDK.Environments.Placeholders;
 using System.IO;
 
 
@@ -9,7 +9,7 @@ using UnityEngine;
 #endif
 
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class SpawnableHandlerPlaceholder : SceneComponentPlaceholderBase
     {

@@ -3,7 +3,7 @@ using Virtuademy.SDK.Dialogs;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs
+namespace Virtuademy.SDK.Environments.Dialogs
 {
     [UnitTitle("Reflectis Dialogs: Dialog Path Ended")]
     [UnitSurtitle("Dialogs")]

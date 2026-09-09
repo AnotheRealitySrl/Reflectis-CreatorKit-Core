@@ -1,7 +1,7 @@
 ﻿using Virtuademy.SDK.Dialogs;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs
+namespace Virtuademy.SDK.Environments.Dialogs
 {
     public class DialogPanelSpawner : MonoBehaviour
     {

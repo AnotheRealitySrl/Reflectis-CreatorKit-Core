@@ -1,14 +1,14 @@
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Interaction;
+using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core.Utilities;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IManipulable;
+using static Virtuademy.SDK.Environments.Interaction.IManipulable;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     public abstract class OnManipulationEventUnit : UnityEventUnit<IManipulable, EManipulableState>
     {

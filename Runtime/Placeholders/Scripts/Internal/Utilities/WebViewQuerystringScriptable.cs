@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 
 [CreateAssetMenu(menuName = "AnotheReality/Utils/WebViewQuerystringScriptable", fileName = "WebViewQuerystringScriptable")]
 public class WebViewQuerystringScriptable

@@ -3,7 +3,7 @@ using Virtuademy.SDK.Core.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Networking: On Other Player Left")]
     [UnitSurtitle("Networking")]

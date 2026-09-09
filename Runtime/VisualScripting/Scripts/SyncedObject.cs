@@ -1,4 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     public class SyncedObject : SceneComponentPlaceholderNetwork
     {

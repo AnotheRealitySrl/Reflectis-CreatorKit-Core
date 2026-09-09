@@ -7,7 +7,7 @@ using System.Globalization;
 
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Editor
+namespace Virtuademy.SDK.Environments.Editor
 {
     /// <summary>
     /// Stores editor login state using both SessionState (for runtime) and EditorPrefs (for persistence across editor restarts).

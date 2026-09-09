@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs.Editor
+namespace Virtuademy.SDK.Environments.Dialogs.Editor
 {
     [Descriptor(typeof(OnDialogNodeOption4EventNode))]
     public class OnDialogNodeOption4EventDescriptor : EventUnitDescriptor<OnDialogNodeOption4EventNode>

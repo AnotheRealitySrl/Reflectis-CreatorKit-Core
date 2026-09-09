@@ -3,7 +3,7 @@ using Virtuademy.SDK.Tasks;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     [UnitTitle("Reflectis Tasks: On Task System Ready")]
     [UnitSurtitle("Tasks")]

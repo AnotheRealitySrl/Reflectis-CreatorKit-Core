@@ -1,7 +1,7 @@
 using Virtuademy.SDK.Tasks;
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     [UnitTitle("Reflectis Tasks: CompleteTask")]
     [UnitSurtitle("Tasks")]

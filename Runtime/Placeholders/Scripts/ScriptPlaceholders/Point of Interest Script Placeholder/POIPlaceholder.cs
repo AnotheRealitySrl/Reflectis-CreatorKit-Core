@@ -1,4 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core.Utilities;
 
 using TMPro;
@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class POIPlaceholder : SceneComponentPlaceholderBase, IAddressablePlaceholder
     {

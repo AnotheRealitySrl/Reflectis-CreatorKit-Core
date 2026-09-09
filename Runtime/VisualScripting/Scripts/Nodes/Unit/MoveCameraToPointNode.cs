@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Character: Move camera to point")]
     [UnitSurtitle("Character")]

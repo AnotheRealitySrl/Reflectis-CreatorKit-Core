@@ -1,13 +1,13 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core;
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner;
+﻿using Virtuademy.SDK.Environments;
+using Virtuademy.SDK.Environments.ClientModels;
+using Virtuademy.SDK.Environments.ObjectSpawner;
 using Virtuademy.SDK.Core.VisualScripting;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis spawnable: Spawn Spawnable Object Node")]
     [UnitSurtitle("Spawnable")]

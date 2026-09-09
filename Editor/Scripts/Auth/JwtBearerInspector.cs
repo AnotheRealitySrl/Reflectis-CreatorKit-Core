@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Text;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Editor
+namespace Virtuademy.SDK.Environments.Editor
 {
     /// <summary>
     /// Reads registered claims out of a Bearer JWT without validating its signature.

@@ -2,7 +2,7 @@ using System;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner
+namespace Virtuademy.SDK.Environments.ObjectSpawner
 {
     [Serializable]
     public class SpawnPosition

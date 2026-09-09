@@ -6,7 +6,7 @@ using System.Linq;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     public enum ViolationKind
     {

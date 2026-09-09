@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 278238933
 --- !u!114 &6727557940497456644
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 186387688713789397}

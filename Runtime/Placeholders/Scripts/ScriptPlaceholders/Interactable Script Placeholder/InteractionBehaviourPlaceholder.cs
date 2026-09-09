@@ -1,7 +1,7 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [RequireComponent(typeof(InteractablePlaceholder))]
     public abstract class InteractionBehaviourPlaceholder : SceneComponentPlaceholderBase

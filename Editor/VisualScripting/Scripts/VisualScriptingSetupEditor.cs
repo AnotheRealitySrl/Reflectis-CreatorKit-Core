@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     public static class VisualScriptingSetupEditor
     {

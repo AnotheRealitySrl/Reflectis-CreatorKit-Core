@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Synced Object: Try Get Ownership")]
     [UnitSurtitle("Synced Object")]

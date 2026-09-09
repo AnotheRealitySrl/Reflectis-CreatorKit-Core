@@ -1,7 +1,7 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
+﻿using Virtuademy.SDK.Environments.ClientModels;
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Player Save Data: Set Data")]
     [UnitSurtitle("Player Save Data")]

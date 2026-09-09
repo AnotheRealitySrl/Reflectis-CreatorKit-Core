@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Splines
+namespace Virtuademy.SDK.Environments.VisualScripting.Splines
 {
     [UnitTitle("Reflectis SplineAnimate: Play Coroutine")]
     [UnitSurtitle("SplineAnimate")]

@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders.Editor
+namespace Virtuademy.SDK.Environments.Placeholders.Editor
 {
     [CustomEditor(typeof(InteractablePlaceholder))]
     public class InteractationPlaceholderEditor : UnityEditor.Editor

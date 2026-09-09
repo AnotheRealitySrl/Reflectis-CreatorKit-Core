@@ -1,9 +1,9 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core.Utilities;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class DashboardPlaceholder : SceneComponentPlaceholderBase, IAddressablePlaceholder
     {

@@ -1,4 +1,4 @@
-namespace Virtuademy.CreatorKit.Worlds.Core.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public interface IAddressablePlaceholder
     {

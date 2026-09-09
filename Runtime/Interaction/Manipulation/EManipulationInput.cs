@@ -1,6 +1,6 @@
 using System;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Interaction
+namespace Virtuademy.SDK.Environments.Interaction
 {
     [Flags]
     public enum EManipulationInput

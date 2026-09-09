@@ -4,7 +4,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core
+namespace Virtuademy.SDK.Environments
 {
     [CreateAssetMenu(menuName = "Virtuademy/SDK-ObjectSpawner/SpawnableObjectListData", fileName = "SpawnableObjectListData")]
     public class SpawnableObjectListData : ScriptableObject

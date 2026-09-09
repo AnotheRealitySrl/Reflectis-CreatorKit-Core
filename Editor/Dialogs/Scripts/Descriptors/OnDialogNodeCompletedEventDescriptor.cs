@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs.Editor
+namespace Virtuademy.SDK.Environments.Dialogs.Editor
 {
     [Descriptor(typeof(OnDialogNodeCompletedEventDescriptor))]
     public class OnDialogNodeCompletedEventDescriptor : EventUnitDescriptor<OnDialogNodeCompletedEventNode>

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine.Events;
 using static Virtuademy.SDK.Dialogs.DialogNode;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs
+namespace Virtuademy.SDK.Environments.Dialogs
 {
     [UnitTitle("Reflectis Dialogs: Dialog Node Status Changed")]
     [UnitSurtitle("Dialogs")]

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Scene: Fade From Black")]
     [UnitSurtitle("Scene")]

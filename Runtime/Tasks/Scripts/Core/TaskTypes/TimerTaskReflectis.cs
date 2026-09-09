@@ -3,7 +3,7 @@ using Virtuademy.SDK.Tasks;
 using Virtuademy.SDK.Tasks.Detectors;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     public class TimerTaskReflectis : TaskReflectis, ITaskNode<TimerTaskNode>
     {

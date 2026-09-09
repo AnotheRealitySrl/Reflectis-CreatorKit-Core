@@ -1,12 +1,12 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 using System;
 
 using Unity.VisualScripting;
 
 using UnityEngine;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IVisualScriptingInteractable;
+using static Virtuademy.SDK.Environments.Interaction.IVisualScriptingInteractable;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     public class VisualScriptingInteractablePlaceholder : InteractionBehaviourPlaceholder
     {

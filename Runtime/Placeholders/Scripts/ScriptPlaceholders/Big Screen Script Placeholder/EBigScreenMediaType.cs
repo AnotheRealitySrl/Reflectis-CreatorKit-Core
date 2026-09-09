@@ -1,4 +1,4 @@
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     /// <summary>
     /// What a big screen shows when it loads its default media.

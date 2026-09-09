@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core
+namespace Virtuademy.SDK.Environments
 {
     public class SpawnableObjectListReference : MonoBehaviour
     {

@@ -1,10 +1,10 @@
-using Virtuademy.CreatorKit.Worlds.VisualScripting;
+using Virtuademy.SDK.Environments.VisualScripting;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     [Descriptor(typeof(LoadDefaultEventNode))]
     public class LoadDefaultEventDescriptor : UnitDescriptor<LoadDefaultEventNode>

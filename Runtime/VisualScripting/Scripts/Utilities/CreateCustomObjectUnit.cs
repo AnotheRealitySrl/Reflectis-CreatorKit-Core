@@ -5,7 +5,7 @@ using System.Linq;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Custom Object: Create")]
     [UnitSurtitle("Reflectis Custom Object")]

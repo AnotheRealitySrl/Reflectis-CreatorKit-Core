@@ -1,9 +1,9 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 using UnityEditor;
 using UnityEngine;
 
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [RequireComponent(typeof(PickablePlaceholder))]
     public class ToolItemPlaceholderObsolete : PickablePlaceholder, IAddressablePlaceholder

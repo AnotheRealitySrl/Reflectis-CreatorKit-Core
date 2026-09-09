@@ -1,4 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
+﻿using Virtuademy.SDK.Environments.ClientModels;
 using Virtuademy.SDK.Tasks;
 using Virtuademy.SDK.Tasks.UI;
 
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     public class TaskSystemReflectis : TaskSystem
     {

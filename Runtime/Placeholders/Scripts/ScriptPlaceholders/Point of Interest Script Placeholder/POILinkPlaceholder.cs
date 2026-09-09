@@ -9,7 +9,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [Serializable]
     public class POILinkPlaceholder : POIBlockPlaceholder

@@ -1,10 +1,10 @@
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
+using Virtuademy.SDK.Environments.Interaction;
 
 using Unity.VisualScripting;
 
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IManipulable;
+using static Virtuademy.SDK.Environments.Interaction.IManipulable;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis: Expose Manipulable")]
     [UnitSurtitle("Expose")]

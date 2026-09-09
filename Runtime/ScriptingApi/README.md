@@ -12,6 +12,11 @@ static Mono.Cecil scan before anything runs. That whitelist has always **allowed
 `Virtuademy.SDK`, `Virtuademy.CreatorKit`, `Virtuademy.Worlds`, `Virtuademy.Core` and
 `Virtuademy.ClientModels` outright.
 
+Since the package became `Virtuademy-SDK-Environments` (10.0.0) its own namespaces sit under the
+`Virtuademy.SDK` denial, so the perimeter no longer leans on the `Virtuademy.CreatorKit` entry —
+which is now dead, and can come out of `policy.json` on its next pass. The whitelist and the
+package's shape agree by construction rather than by coincidence.
+
 Until now that allowance pointed at nothing: no such assembly existed. The perimeter was therefore
 maximal by accident — a script could reach `mscorlib`, a slice of `UnityEngine`, TextMeshPro and
 nothing of ours — and the API the whitelist promised was unwritten. This is that API.

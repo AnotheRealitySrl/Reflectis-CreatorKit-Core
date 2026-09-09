@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     [Descriptor(typeof(CheckSceneAvailabilityNode))]
     public class CheckSceneAvailabilityDescriptor : UnitDescriptor<CheckSceneAvailabilityNode>

@@ -1,7 +1,7 @@
 using Virtuademy.SDK.Core.Editor;
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders.Editor
+namespace Virtuademy.SDK.Environments.Placeholders.Editor
 {
     [InitializeOnLoad]
     public class ScriptDefineSymbols

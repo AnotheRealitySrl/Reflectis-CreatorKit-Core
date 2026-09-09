@@ -1,9 +1,9 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class AddOpenHelpOnActionPlaceholder : SceneComponentPlaceholderBase
     {

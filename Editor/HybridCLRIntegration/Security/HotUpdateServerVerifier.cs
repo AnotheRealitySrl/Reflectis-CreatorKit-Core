@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-using Virtuademy.CreatorKit.Worlds.Core.Editor;
+using Virtuademy.SDK.Environments.Editor;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     /// <summary>
     /// Calls the AUTHORITATIVE backend verification (world-agnostic):

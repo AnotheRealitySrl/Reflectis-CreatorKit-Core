@@ -1,13 +1,13 @@
 using Newtonsoft.Json;
 
-using Virtuademy.CreatorKit.Worlds.Core.Editor;
+using Virtuademy.SDK.Environments.Editor;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     /// <summary>
     /// Downloads the whitelist <c>policy.json</c> from the platform's public GET endpoint —

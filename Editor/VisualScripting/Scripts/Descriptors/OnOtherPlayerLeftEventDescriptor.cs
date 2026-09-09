@@ -1,8 +1,8 @@
-using Virtuademy.CreatorKit.Worlds.VisualScripting;
+using Virtuademy.SDK.Environments.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     [Descriptor(typeof(OnOtherPlayerLeftEventNode))]
     public class OnOtherPlayerLeftEventDescriptor : UnitDescriptor<OnOtherPlayerLeftEventNode>

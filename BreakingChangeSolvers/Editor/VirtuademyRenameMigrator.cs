@@ -7,11 +7,14 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
+namespace Virtuademy.SDK.Environments.Installer.Editor
 {
     /// <summary>
-    /// Project-wide migration for the Reflectis -> Virtuademy brand rename of the SDK and
-    /// Creator Kit packages (namespaces, assembly names, package ids).
+    /// Project-wide migration for the two renames the packages have been through:
+    /// the Reflectis -> Virtuademy brand rename, and the authoring package becoming
+    /// Virtuademy-SDK-Environments (namespaces, assembly names, package ids).
+    ///
+    /// One pass covers both, in that order, so a project can arrive from either side.
     ///
     /// MonoBehaviour references survive the rename on their own (they resolve by GUID), but
     /// every reference stored BY NAME does not: [SerializeReference] payloads in scenes,
@@ -43,7 +46,7 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
         // in a project where packages are embedded).
         private static readonly string OldBrand = "Reflec" + "tis";
         private const string NewBrand = "Virtuademy";
-        private const string WindowTitle = "Virtuademy rename migrator";
+        private const string WindowTitle = "Package rename migrator";
 
         // Ordered: specific mappings first, then the generic namespace rule.
         private static readonly (string oldValue, string newValue)[] LiteralMap =
@@ -64,6 +67,33 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
         private static readonly Regex EditorNamespaceRule =
             new(@"(?<![A-Za-z0-9_])" + OldBrand + @"Editor\.", RegexOptions.Compiled);
 
+        // The Environments rename (2026-09-09): the authoring package stopped being
+        // "CreatorKit Worlds Core" and became "SDK Environments" — package id, three assembly
+        // names and every namespace under the old prefix.
+        //
+        // Applied AFTER the brand rules, which is what lets one pass serve both hops: a project
+        // still on the old brand has its old-brand authoring namespace turned into the
+        // new-brand one by the generic rule above and is then caught here, while a project that
+        // already took the brand rename is caught directly. Ordered longest-first, because the
+        // runtime assembly's name is a prefix of the editor one's and replacing the short one
+        // first would glue "Editor" onto the new name.
+        //
+        // The tokens are split for the same reason OldBrand is: this file must not match its own
+        // table when the tool scans the project it is running in.
+        private static readonly string OldWorlds = "Virtuademy.Creator" + "Kit.Worlds";
+        private static readonly string OldWorldsPackage = "Virtuademy-Creator" + "Kit-Worlds-Core";
+        private static readonly string OldWorldsId = "virtuademy-creator" + "kit-worlds-core";
+
+        private static readonly (string oldValue, string newValue)[] EnvironmentsMap =
+        {
+            (OldWorlds + ".CoreHybridCLREditor", "Virtuademy.SDK.Environments.HybridCLREditor"),
+            (OldWorlds + ".CoreEditor", "Virtuademy.SDK.Environments.Editor"),
+            (OldWorlds + ".Core", "Virtuademy.SDK.Environments"),
+            (OldWorlds, "Virtuademy.SDK.Environments"),
+            (OldWorldsPackage, "Virtuademy-SDK-Environments"),
+            (OldWorldsId, "virtuademy-sdk-environments"),
+        };
+
         private static readonly string[] TextExtensions =
         {
             ".cs", ".asmdef", ".asmref", ".json", ".uxml", ".uss", ".tss",
@@ -77,7 +107,7 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
         private bool hasScanned;
         private bool deleteLockFile = true;
 
-        [MenuItem("Virtuademy Worlds/Creator Kit update routines/Reflectis -> Virtuademy rename")]
+        [MenuItem("Virtuademy Worlds/Creator Kit update routines/Package rename migration")]
         public static void Open()
         {
             VirtuademyRenameMigrator window = GetWindow<VirtuademyRenameMigrator>(false, WindowTitle, true);
@@ -114,13 +144,13 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
 
             if (!hasScanned)
             {
-                EditorGUILayout.HelpBox("Press \"Rescan project\" to search for old-brand references.", MessageType.Info);
+                EditorGUILayout.HelpBox("Press \"Rescan project\" to search for outdated package references.", MessageType.Info);
                 return;
             }
 
             if (entries.Count == 0)
             {
-                EditorGUILayout.HelpBox("No old-brand reference found. The project is already migrated.", MessageType.Info);
+                EditorGUILayout.HelpBox("No outdated reference found. The project is already migrated.", MessageType.Info);
                 return;
             }
 
@@ -358,7 +388,22 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
             }
 
             hits += GenericNamespaceRule.Matches(text).Count;
+            text = GenericNamespaceRule.Replace(text, NewBrand + ".");
             hits += EditorNamespaceRule.Matches(text).Count;
+            text = EditorNamespaceRule.Replace(text, NewBrand + "Editor.");
+
+            foreach ((string oldValue, string newValue) in EnvironmentsMap)
+            {
+                int index = 0;
+                while ((index = text.IndexOf(oldValue, index, StringComparison.Ordinal)) >= 0)
+                {
+                    hits++;
+                    index += oldValue.Length;
+                }
+
+                text = text.Replace(oldValue, newValue);
+            }
+
             return hits;
         }
 
@@ -371,6 +416,12 @@ namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
 
             text = GenericNamespaceRule.Replace(text, NewBrand + ".");
             text = EditorNamespaceRule.Replace(text, NewBrand + "Editor.");
+
+            foreach ((string oldValue, string newValue) in EnvironmentsMap)
+            {
+                text = text.Replace(oldValue, newValue);
+            }
+
             return text;
         }
 

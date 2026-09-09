@@ -3,7 +3,7 @@ using Virtuademy.SDK.Dialogs;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs
+namespace Virtuademy.SDK.Environments.Dialogs
 {
     [UnitTitle("Reflectis Dialogs: On Dialog Node In Progress")]
     [UnitSurtitle("Dialogs")]

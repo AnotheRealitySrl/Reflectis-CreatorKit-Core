@@ -9,7 +9,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     /// <summary>
     /// Resolves the project's hot-update assembly automatically (no manual browsing). The

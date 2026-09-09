@@ -1,11 +1,11 @@
 #if UNITY_EDITOR
-using Virtuademy.CreatorKit.Worlds.Placeholders.Editor;
+using Virtuademy.SDK.Environments.Placeholders.Editor;
 
 using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [CustomEditor(typeof(SyncedObject))]
     public class SyncedObjectEditor : NetworkPlaceholderEditor

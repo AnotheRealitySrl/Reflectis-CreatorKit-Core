@@ -7,7 +7,7 @@ using UnityEditor.AddressableAssets.Settings;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.CoreEditor
+namespace Virtuademy.SDK.Environments.Editor
 {
     #region Addressable Asset Classes
 

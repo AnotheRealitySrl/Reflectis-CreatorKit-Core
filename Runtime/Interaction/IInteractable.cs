@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Interaction
+namespace Virtuademy.SDK.Environments.Interaction
 {
     /// <summary>
     /// Common interaface for any interactable entity.

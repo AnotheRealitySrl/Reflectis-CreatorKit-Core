@@ -4,7 +4,7 @@ using Virtuademy.SDK.PlatformApi;
 using System;
 using System.Collections.Generic;
 
-namespace Virtuademy.CreatorKit.Worlds.Analytics
+namespace Virtuademy.SDK.Environments.Analytics
 {
     /// <summary>
     /// Which payload type belongs to which analytic verb.

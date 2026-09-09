@@ -2,7 +2,7 @@ using Virtuademy.SDK.Core.Utilities;
 
 using System.Collections.Generic;
 
-namespace Virtuademy.CreatorKit.Worlds.Analytics
+namespace Virtuademy.SDK.Environments.Analytics
 {
     public abstract class DisplayableContentBase
     {

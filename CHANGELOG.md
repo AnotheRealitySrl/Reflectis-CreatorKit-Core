@@ -1,5 +1,20 @@
 # Release notes
 
+## v10.0.0
+
+### Changed
+- **The package is `Virtuademy-SDK-Environments`.** Business ruled out the name "Creator Kit" and this package was the last place it was a wire symbol rather than prose. The id is `com.anotherealitysrl.virtuademy-sdk-environments`, and the three assemblies are `Virtuademy.SDK.Environments`, `Virtuademy.SDK.Environments.Editor` and `Virtuademy.SDK.Environments.HybridCLREditor`.
+- Every namespace under the old `Virtuademy.CreatorKit.Worlds` prefix moved to `Virtuademy.SDK.Environments`, by one substitution rule. The `.Core.` segment the merge left behind is gone with it: `...Worlds.Core.ClientModels` is now `...Environments.ClientModels`, and the three namespace pairs the merge had left duplicated (`Placeholders`, the package root, `Editor`) are single namespaces again. That merge was verified collision-free first — no two types of the same name met.
+- `Virtuademy.Environments.ScriptingApi` keeps its name. It is the one assembly `policy.json` whitelists by name, that file is deployed, and a published script records it.
+- The rename migrator handles both hops in one pass now, and its menu entry is `Package rename migration`. A creator project on the old brand is carried through the brand rename and then this one; a project already on the new brand is caught directly.
+
+### Breaking
+- **Every published world must be rebuilt.** A built Addressable bundle records each component by assembly, namespace and class, and all three changed.
+- **Every Visual Scripting graph must be migrated**, in a creator's project and in this repo. A graph records each unit as namespace plus type — no assembly — so the namespace change is the one that reaches graphs. Run `Virtuademy Worlds/Creator Kit update routines/Package rename migration`, then `Regenerate Nodes`.
+- Every `using Virtuademy.CreatorKit.Worlds…` in a creator's own scripts breaks, and so does any asmdef that names one of the three assemblies as a string rather than a GUID. The migrator rewrites both.
+- A project that depends on `com.anotherealitysrl.virtuademy-creatorkit-worlds-core` in its `manifest.json` no longer resolves it. Existing registry releases are unaffected: each pins the git repo at a tag, and that tag still carries the old id.
+- Five namespaces the package declares are **not** renamed and are not part of this change: `Virtuademy.SDK.Core`, `...Core.ApplicationManagement`, `...Core.ChatBot`, `...Core.Networking` and `...Core.NetworkingSystem`. Those five types moved here from SDK-Core keeping their original namespaces so consumers' `using` directives kept working, and renaming them now would break the very thing they exist to preserve.
+
 ## v9.0.0
 
 ### Changed

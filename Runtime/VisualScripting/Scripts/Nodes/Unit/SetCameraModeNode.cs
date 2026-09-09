@@ -7,7 +7,7 @@ using System;
 using System.Reflection;
 using System.Linq;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Camera: Set camera mode")]
     [UnitSurtitle("SetCameraMode")]

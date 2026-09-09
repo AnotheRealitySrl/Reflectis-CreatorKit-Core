@@ -15,7 +15,7 @@ using UnityEditorInternal;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     public static class HotUpdateSetupper
     {

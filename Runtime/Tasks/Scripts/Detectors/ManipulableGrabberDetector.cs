@@ -1,11 +1,11 @@
 
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Interaction;
+using Virtuademy.SDK.Environments.Placeholders;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     public class ManipulableGrabberDetector : MonoBehaviour
     {

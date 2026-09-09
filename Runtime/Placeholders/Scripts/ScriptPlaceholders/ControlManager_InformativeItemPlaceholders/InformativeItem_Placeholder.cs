@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class InformativeItem_Placeholder : InformativeItem_Abstract
     {

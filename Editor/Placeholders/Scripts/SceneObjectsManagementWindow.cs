@@ -1,4 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders.Editor
+namespace Virtuademy.SDK.Environments.Placeholders.Editor
 {
     public class SceneObjectsManagementWindow : EditorWindow
     {

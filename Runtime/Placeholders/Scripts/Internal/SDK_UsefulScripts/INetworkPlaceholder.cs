@@ -1,4 +1,4 @@
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public interface INetworkPlaceholder
     {

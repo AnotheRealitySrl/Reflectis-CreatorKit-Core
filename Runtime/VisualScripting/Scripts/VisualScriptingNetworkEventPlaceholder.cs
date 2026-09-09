@@ -1,9 +1,9 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     public class VisualScriptingNetworkEventPlaceholder : SceneComponentPlaceholderNetwork
     {

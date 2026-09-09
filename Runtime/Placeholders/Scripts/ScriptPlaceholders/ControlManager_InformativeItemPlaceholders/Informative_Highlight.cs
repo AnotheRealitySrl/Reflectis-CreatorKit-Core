@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class Informative_Highlight : MonoBehaviour
     {

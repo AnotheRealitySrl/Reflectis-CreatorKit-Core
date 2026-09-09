@@ -1,7 +1,7 @@
 {
-  "name": "com.anotherealitysrl.virtuademy-creatorkit-worlds-core",
-  "displayName": "Virtuademy-CreatorKit-Worlds-Core",
-  "version": "9.0.0",
+  "name": "com.anotherealitysrl.virtuademy-sdk-environments",
+  "displayName": "Virtuademy-SDK-Environments",
+  "version": "10.0.0",
   "unity": "2020.1",
   "description": "Everything a world is authored with: placeholder bases and the placeholder set, the Visual Scripting nodes, the object spawner and interaction contracts, client models, the task and dialog adapters, the analytics contract, and the editor publish tooling. Formerly six packages (Core, Placeholders, VisualScripting, Tasks, Dialogs, Analytics), merged at 9.0.0.",
   "keywords": [
@@ -10,7 +10,7 @@
   "category": "Unity",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnotheRealitySrl/Virtuademy-CreatorKit-Worlds-Core"
+    "url": "https://github.com/AnotheRealitySrl/Virtuademy-SDK-Environments"
   },
   "samples": [
     {

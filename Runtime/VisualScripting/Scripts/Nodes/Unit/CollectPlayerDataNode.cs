@@ -1,10 +1,10 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
+using Virtuademy.SDK.Environments.ClientModels;
 
 using System.Collections.Generic;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Expose: CMUser")]
     [UnitSurtitle("Expose")]

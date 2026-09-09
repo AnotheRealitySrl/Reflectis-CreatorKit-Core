@@ -5,7 +5,7 @@ using System.Linq;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     /// <summary>
     /// Packs this project's compiled hot-update assembly — one DLL per build target — into

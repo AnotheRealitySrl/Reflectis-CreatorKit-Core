@@ -1,17 +1,17 @@
 #if REFLECTIS_CREATOR_KIT_WORLDS_PLACEHOLDERS
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core.Utilities;
 using UnityEngine;
 #endif
 #if REFLECTIS_CREATOR_KIT_WORLDS_TASKS && REFLECTIS_CREATOR_KIT_WORLDS_PLACEHOLDERS
-using Virtuademy.CreatorKit.Worlds.Tasks;
+using Virtuademy.SDK.Environments.Tasks;
 #endif
 #if REFLECTIS_CREATOR_KIT_WORLDS_VISUAL_SCRIPTING && REFLECTIS_CREATOR_KIT_WORLDS_PLACEHOLDERS
-using Virtuademy.CreatorKit.Worlds.VisualScripting;
+using Virtuademy.SDK.Environments.VisualScripting;
 #endif
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.Installer.Editor
+namespace Virtuademy.SDK.Environments.Installer.Editor
 {
     public static class BreakingChangesSolver2025_4
     {

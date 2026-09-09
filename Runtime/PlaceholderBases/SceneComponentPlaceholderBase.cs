@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [RequireComponent(typeof(SceneObjectId))]
     public abstract class SceneComponentPlaceholderBase : MonoBehaviour

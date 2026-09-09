@@ -1,8 +1,8 @@
-using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public interface IPickable
     {

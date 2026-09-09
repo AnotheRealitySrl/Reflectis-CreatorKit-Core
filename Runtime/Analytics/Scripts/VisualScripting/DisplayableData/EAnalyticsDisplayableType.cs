@@ -1,4 +1,4 @@
-namespace Virtuademy.CreatorKit.Worlds.Analytics
+namespace Virtuademy.SDK.Environments.Analytics
 {
     public enum EAnalyticsDisplayableType
     {

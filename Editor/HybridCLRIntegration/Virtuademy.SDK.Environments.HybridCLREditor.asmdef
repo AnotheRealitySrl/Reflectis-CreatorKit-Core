@@ -1,6 +1,6 @@
 {
-    "name": "Virtuademy.CreatorKit.Worlds.CoreHybridCLREditor",
-    "rootNamespace": "Virtuademy.CreatorKit.Worlds.CoreHybridCLREditor",
+    "name": "Virtuademy.SDK.Environments.HybridCLREditor",
+    "rootNamespace": "Virtuademy.SDK.Environments.HybridCLREditor",
     "references": [
         "GUID:2373f786d14518f44b0f475db77ba4de",
         "GUID:01470f9b53eba9e4cb6fb8ffb31c0ce9",

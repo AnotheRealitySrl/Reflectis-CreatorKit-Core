@@ -14,7 +14,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Editor
+namespace Virtuademy.SDK.Environments.Editor
 {
     /// <summary>
     /// Owns the editor's authenticated session: acquires it, renews it before it expires, and

@@ -1,6 +1,6 @@
 using Virtuademy.SDK.Core.ApiSystem;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Editor
+namespace Virtuademy.SDK.Environments.Editor
 {
     /// <summary>
     /// The APIs the editor tooling talks to: addressables deploy, interpreted-script verification

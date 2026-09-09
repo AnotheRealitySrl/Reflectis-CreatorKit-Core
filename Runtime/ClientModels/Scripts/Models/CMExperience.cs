@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.ClientModels
+namespace Virtuademy.SDK.Environments.ClientModels
 {
     [Serializable]
     public class CMExperience

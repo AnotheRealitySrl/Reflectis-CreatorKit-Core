@@ -1,11 +1,11 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
+﻿using Virtuademy.SDK.Environments.ClientModels;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Platform: Reload Scene")]
     [UnitSurtitle("Platform")]

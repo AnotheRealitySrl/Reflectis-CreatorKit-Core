@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Visual Scripting Interactable: On Select Exit")]
     [UnitSurtitle("Visual Scripting Interactable")]

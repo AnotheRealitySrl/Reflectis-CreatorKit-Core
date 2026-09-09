@@ -1,10 +1,10 @@
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
+using Virtuademy.SDK.Environments.Interaction;
 
 using Unity.VisualScripting;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis GameObject: Get Interactable")]
     [UnitSurtitle("GameObject")]

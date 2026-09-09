@@ -1,10 +1,10 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core.Utilities;
 
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public abstract class ChatbotPlaceholderBase : SceneComponentPlaceholderBase
     {

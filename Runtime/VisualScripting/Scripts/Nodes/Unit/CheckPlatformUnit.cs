@@ -1,7 +1,7 @@
 ﻿using Virtuademy.SDK.Core.ApplicationManagement;
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
   [UnitTitle("Reflectis Platform: Switch")]
   [UnitSurtitle("Platform")]

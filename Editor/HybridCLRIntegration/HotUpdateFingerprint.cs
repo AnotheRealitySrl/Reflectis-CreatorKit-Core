@@ -12,7 +12,7 @@ using UnityEditor.Build;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.HybridCLR.Editor
+namespace Virtuademy.SDK.Environments.HybridCLR.Editor
 {
     /// <summary>
     /// Digest of everything that decides what the hot-update assembly compiles to. It goes into

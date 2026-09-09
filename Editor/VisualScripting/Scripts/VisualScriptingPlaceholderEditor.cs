@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     [CustomEditor(typeof(VisualScriptingInteractablePlaceholder))]
     public class VisualScriptingPlaceholderEditor : UnityEditor.Editor

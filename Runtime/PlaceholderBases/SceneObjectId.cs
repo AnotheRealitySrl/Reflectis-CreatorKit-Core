@@ -8,9 +8,9 @@ using UnityEngine;
 
 using System.Collections.Generic;
 
-using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     [ExecuteInEditMode]
     [DisallowMultipleComponent]

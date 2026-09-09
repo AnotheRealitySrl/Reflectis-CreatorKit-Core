@@ -1,8 +1,8 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner;
+﻿using Virtuademy.SDK.Environments.ObjectSpawner;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class SpawnObjectData : MonoBehaviour
     {

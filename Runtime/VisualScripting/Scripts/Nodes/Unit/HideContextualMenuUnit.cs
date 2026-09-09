@@ -1,8 +1,8 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Interaction;
+﻿using Virtuademy.SDK.Environments.Interaction;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis ContextualMenu: Hide")]
     [UnitSurtitle("ContextualMenu")]

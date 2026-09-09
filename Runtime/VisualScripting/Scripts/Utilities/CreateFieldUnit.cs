@@ -2,7 +2,7 @@ using Virtuademy.SDK.Core.Utilities;
 
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Field: Create")]
     [UnitSurtitle("Reflectis Field")]

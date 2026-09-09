@@ -1,4 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+﻿using Virtuademy.SDK.Environments.Placeholders;
 
 using System;
 
@@ -6,7 +6,7 @@ using TMPro;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class LocalizationPlaceholder : SceneComponentPlaceholderBase
     {

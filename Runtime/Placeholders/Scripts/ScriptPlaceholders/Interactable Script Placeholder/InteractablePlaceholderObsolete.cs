@@ -8,12 +8,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IContextualMenuManageable;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IInteractable;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IManipulable;
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IVisualScriptingInteractable;
+using static Virtuademy.SDK.Environments.Interaction.IContextualMenuManageable;
+using static Virtuademy.SDK.Environments.Interaction.IInteractable;
+using static Virtuademy.SDK.Environments.Interaction.IManipulable;
+using static Virtuademy.SDK.Environments.Interaction.IVisualScriptingInteractable;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class InteractablePlaceholderObsolete : SceneComponentPlaceholderNetwork
     {

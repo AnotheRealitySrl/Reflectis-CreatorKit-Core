@@ -1,7 +1,7 @@
-﻿using Virtuademy.CreatorKit.Worlds.Analytics;
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+﻿using Virtuademy.SDK.Environments.Analytics;
+using Virtuademy.SDK.Environments.ClientModels;
+using Virtuademy.SDK.Environments.Interaction;
+using Virtuademy.SDK.Environments.Placeholders;
 using Virtuademy.SDK.Core;
 using Virtuademy.SDK.Core.ApplicationManagement;
 using Virtuademy.SDK.PlatformApi;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds
+namespace Virtuademy.SDK.Environments
 {
     /// <summary>
     /// Everything an authored world can ask the platform to do.

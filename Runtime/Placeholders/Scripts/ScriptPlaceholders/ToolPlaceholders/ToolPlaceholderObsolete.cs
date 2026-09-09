@@ -4,9 +4,9 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Virtuademy.CreatorKit.Worlds.Placeholders.ToolPlaceholderObsolete;
+using static Virtuademy.SDK.Environments.Placeholders.ToolPlaceholderObsolete;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class ToolPlaceholderObsolete : SpawnableHandlerPlaceholder
     {

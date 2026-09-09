@@ -2,7 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine.Events;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting
+namespace Virtuademy.SDK.Environments.VisualScripting
 {
     [UnitTitle("Reflectis Tutorial: On Tutorial Closed")]
     [UnitSurtitle("Tutorial")]

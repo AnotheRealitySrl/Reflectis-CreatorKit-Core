@@ -3,7 +3,7 @@ using Virtuademy.SDK.Core.Utilities;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class ChatBotPlaceholder : ChatbotPlaceholderBase
     {

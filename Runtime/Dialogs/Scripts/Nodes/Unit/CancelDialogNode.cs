@@ -1,7 +1,7 @@
 using Virtuademy.SDK.Dialogs;
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs
+namespace Virtuademy.SDK.Environments.Dialogs
 {
     [UnitTitle("Reflectis Dialogs: Cancel Dialog")]
     [UnitSurtitle("Dialogs")]

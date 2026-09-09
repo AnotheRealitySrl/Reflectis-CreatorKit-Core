@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class LocalizationFileLoaderPlaceholder : SceneComponentPlaceholderBase
     {

@@ -2,9 +2,9 @@ using UnityEditor;
 
 using UnityEngine;
 
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IContextualMenuManageable;
+using static Virtuademy.SDK.Environments.Interaction.IContextualMenuManageable;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders.Editor
+namespace Virtuademy.SDK.Environments.Placeholders.Editor
 {
     [CustomEditor(typeof(ContextualMenuPlaceholder))]
     public class ContextualMenuPlaceholderEditor : UnityEditor.Editor

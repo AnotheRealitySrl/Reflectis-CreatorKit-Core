@@ -2,7 +2,7 @@ using UnityEditor;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Dialogs.Editor
+namespace Virtuademy.SDK.Environments.Dialogs.Editor
 {
     [CustomEditor(typeof(DialogPanelSpawner))]
     public class DialogPanelSpawnerEditor : UnityEditor.Editor

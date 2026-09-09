@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-using Virtuademy.CreatorKit.Worlds.CoreEditor;
+using Virtuademy.SDK.Environments.Editor;
 using Virtuademy.SDK.PlatformApi;
 using Virtuademy.SDK.TenantConfiguration;
 using Renci.SshNet;
@@ -23,9 +23,9 @@ using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static Virtuademy.CreatorKit.Worlds.Core.Editor.SceneListScriptableObject;
+using static Virtuademy.SDK.Environments.Editor.SceneListScriptableObject;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.Editor
+namespace Virtuademy.SDK.Environments.Editor
 {
     public class AddressablesManagementWindow : EditorWindow
     {
@@ -56,7 +56,7 @@ namespace Virtuademy.CreatorKit.Worlds.Core.Editor
         private const string build_target_variable_name = "BuildTarget";
         private const string build_target_variable_value = "[UnityEditor.EditorUserBuildSettings.activeBuildTarget]";
         private const string player_version_override_variable_name = "PlayerVersionOverride";
-        private const string player_version_override_variable_value = "[Virtuademy.CreatorKit.Worlds.CoreEditor.AddressablesBuildScript.PlayerVersionOverride]";
+        private const string player_version_override_variable_value = "[Virtuademy.SDK.Environments.Editor.AddressablesBuildScript.PlayerVersionOverride]";
 
         private string remoteBuildPath;
         private string remoteLoadPath;

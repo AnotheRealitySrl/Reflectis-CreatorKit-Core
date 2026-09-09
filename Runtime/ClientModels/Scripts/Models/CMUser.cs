@@ -6,7 +6,7 @@ using Unity.Properties;
 
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core.ClientModels
+namespace Virtuademy.SDK.Environments.ClientModels
 {
     [Serializable]
     public class CMUser

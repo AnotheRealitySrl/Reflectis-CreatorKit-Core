@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 1778279055
 --- !u!114 &1454519290543498306
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 161337212371297058}
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 1218697926
 --- !u!114 &2645788266219206416
 MonoBehaviour:
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 4544290094836363438}
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 412748466
 --- !u!114 &5002196386861160113
 MonoBehaviour:
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 6038111540011289242}
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 918904524
 --- !u!114 &5849650662499708494
 MonoBehaviour:
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 24013531492463504}
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 277335760
 --- !u!114 &1959739085167441187
 MonoBehaviour:
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 8762623508708965939}
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dff487dd3d86f45b8a5d06fd4d9a1c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Core::Virtuademy.CreatorKit.Worlds.Core.Placeholders.SceneObjectId
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments::Virtuademy.SDK.Environments.Placeholders.SceneObjectId
   uniqueID: 40559219
 --- !u!114 &5280675331524902169
 MonoBehaviour:
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9e9cf71b7291944e91dcdd17bf7f74c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Virtuademy.CreatorKit.Worlds.Placeholders::Virtuademy.CreatorKit.Worlds.Placeholders.LocalizationPlaceholder
+  m_EditorClassIdentifier: Virtuademy.SDK.Environments.Placeholders::Virtuademy.SDK.Environments.Placeholders.LocalizationPlaceholder
   automaticSetup: 1
   key: 
   textField: {fileID: 1752602063995846635}

@@ -1,4 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.Placeholders;
+using Virtuademy.SDK.Environments.Placeholders;
 using System.IO;
 using System.Linq;
 #if UNITY_EDITOR
@@ -8,14 +8,14 @@ using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Core
+namespace Virtuademy.SDK.Environments
 {
     public class SpawnableObjectPlaceholder : SceneComponentPlaceholderBase
     {
 
         private const string SpawnableObjectListDataPath = "Assets/SpawnableObject/SpawnableObjectList.asset";
-        private const string LeftHandReferencePrefabPath = "Packages/com.anotherealitysrl.virtuademy-creatorkit-worlds-core/Prefab/LeftHandReference.prefab";
-        private const string RightHandReferencePrefabPath = "Packages/com.anotherealitysrl.virtuademy-creatorkit-worlds-core/Prefab/RightHandReference.prefab";
+        private const string LeftHandReferencePrefabPath = "Packages/com.anotherealitysrl.virtuademy-sdk-environments/Prefab/LeftHandReference.prefab";
+        private const string RightHandReferencePrefabPath = "Packages/com.anotherealitysrl.virtuademy-sdk-environments/Prefab/RightHandReference.prefab";
 
         private bool _isSceneObject;
         public bool IsSceneObject => _isSceneObject;

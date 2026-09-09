@@ -2,9 +2,9 @@
 
 using UnityEngine;
 
-using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IContextualMenuManageable;
+using static Virtuademy.SDK.Environments.Interaction.IContextualMenuManageable;
 
-namespace Virtuademy.CreatorKit.Worlds.Placeholders
+namespace Virtuademy.SDK.Environments.Placeholders
 {
     public class ContextualMenuPlaceholder : InteractionBehaviourPlaceholder
     {

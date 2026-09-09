@@ -1,7 +1,7 @@
-using Virtuademy.CreatorKit.Worlds.VisualScripting;
+using Virtuademy.SDK.Environments.VisualScripting;
 using Unity.VisualScripting;
 
-namespace Virtuademy.CreatorKit.Worlds.VisualScripting.Editor
+namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     [Descriptor(typeof(GetLocalPlayerIdNode))]
     public class GetLocalPlayerIdDescriptor : UnitDescriptor<GetLocalPlayerIdNode>

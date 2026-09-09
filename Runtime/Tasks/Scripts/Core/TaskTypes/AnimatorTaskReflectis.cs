@@ -2,7 +2,7 @@ using Virtuademy.SDK.Graphs;
 using Virtuademy.SDK.Tasks;
 using UnityEngine;
 
-namespace Virtuademy.CreatorKit.Worlds.Tasks
+namespace Virtuademy.SDK.Environments.Tasks
 {
     public class AnimatorTaskReflectis : TaskReflectis, ITaskNode<AnimatorTaskNode>
     {
