@@ -1,11 +1,13 @@
-using Virtuademy.CreatorKit.Worlds.Analytics;
+﻿using Virtuademy.CreatorKit.Worlds.Analytics;
 using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.CreatorKit.Worlds.Core.Interaction;
 using Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner;
 using Virtuademy.CreatorKit.Worlds.Placeholders;
+using Virtuademy.SDK.Core;
 using Virtuademy.SDK.Core.ApplicationManagement;
-using Virtuademy.SDK.Core.CharacterController;
 using Virtuademy.SDK.PlatformApi;
+
+using static Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner.IObjectSpawnerSystem;
 
 using System;
 using System.Collections.Generic;
@@ -298,6 +300,18 @@ namespace Virtuademy.CreatorKit.Worlds
         void SetInventoryAlpha(float alpha);
 
         /// <summary>Spawns one of the platform's own prefabs.</summary>
+        /// <remarks>
+        /// <b>Do not "tidy" <c>EPrefabIdentifier</c> out of <c>IObjectSpawnerSystem</c>.</b> It is
+        /// declared *nested inside* that interface, which is why this file needs a
+        /// <c>using static</c> to see it, and lifting it to a top-level type would look like an
+        /// improvement and break data:
+        /// <c>Assets/_Project/ObjectSpawner/ScriptableObjects/ReflectisPrefabPool.asset</c> stores
+        /// its dictionary's key type by name, spelled
+        /// <c>…ObjectSpawner.IObjectSpawnerSystem+EPrefabIdentifier</c>. Renaming the type empties
+        /// the prefab pool at load, silently. When <c>IObjectSpawnerSystem</c> moves to the main
+        /// project the enum has to stay here, and that move needs the asset migrated in the same
+        /// commit.
+        /// </remarks>
         Task<GameObject> SpawnObject(EPrefabIdentifier prefabId,
                                      Vector3 position,
                                      Quaternion rotation,
