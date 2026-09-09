@@ -52,10 +52,9 @@ namespace Virtuademy.CreatorKit.Worlds.Placeholders
         [SerializeField, Tooltip("If this flag is set, a default media is loaded in the big screen.")]
         private bool defaultMedia;
 
-        [SerializeField, Tooltip("The type of media being loaded by default. Valid only if defaultMedia is set to true. " +
-            "WARNING: do not use the \"Asset3D\" value!")]
+        [SerializeField, Tooltip("The type of media being loaded by default. Valid only if defaultMedia is set to true.")]
         [DrawIf(nameof(defaultMedia), true)]
-        private FileTypeExt mediaType;
+        private EBigScreenMediaType mediaType;
 
         [SerializeField, Tooltip("The url of the media being loaded by default. Valid only if defaultMedia is set to true. " +
             "WARNING: the url must be an absolute url, with the extension of the file included!")]
@@ -75,7 +74,7 @@ namespace Virtuademy.CreatorKit.Worlds.Placeholders
         public Transform CameraPanTransform => cameraPanTransform;
         public string ScreenName => !string.IsNullOrEmpty(screenName) ? screenName : gameObject.name;
         public bool DefaultMedia => defaultMedia;
-        public FileTypeExt MediaType => mediaType;
+        public EBigScreenMediaType MediaType => mediaType;
         public string DefaultUrl => defaultUrl;
         public bool IsLocked => isLocked;
 
