@@ -21,7 +21,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => SM.GetSystem<AvatarSystem>().AvatarInstance.CharacterReference.transform);
+            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => SM.GetSystem<IAvatarSystem>().AvatarInstance.CharacterReference.transform);
         }
     }
 }

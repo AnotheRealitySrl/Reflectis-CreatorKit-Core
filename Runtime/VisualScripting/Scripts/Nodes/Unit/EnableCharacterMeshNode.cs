@@ -29,7 +29,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<AvatarSystem>().EnableAvatarInstanceMeshes(f.GetValue<bool>(Enable));
+                SM.GetSystem<IAvatarSystem>().EnableAvatarInstanceMeshes(f.GetValue<bool>(Enable));
 
                 return OutputTrigger;
             });

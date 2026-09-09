@@ -21,7 +21,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterRightHand = ValueOutput<Transform>(nameof(CharacterRightHand), (flow) => SM.GetSystem<AvatarSystem>().AvatarInstance.CharacterReference.RightInteractorReference);
+            CharacterRightHand = ValueOutput<Transform>(nameof(CharacterRightHand), (flow) => SM.GetSystem<IAvatarSystem>().AvatarInstance.CharacterReference.RightInteractorReference);
         }
     }
 }
