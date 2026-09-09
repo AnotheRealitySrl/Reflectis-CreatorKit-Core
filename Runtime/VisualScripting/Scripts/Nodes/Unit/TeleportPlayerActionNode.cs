@@ -1,7 +1,4 @@
-﻿using Virtuademy.SDK.Core.CharacterController;
-using Virtuademy.SDK.Core.Fade;
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 using Unity.VisualScripting;

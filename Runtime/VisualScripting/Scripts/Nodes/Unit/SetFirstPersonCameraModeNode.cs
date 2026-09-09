@@ -1,6 +1,4 @@
-﻿using Virtuademy.SDK.Core.CharacterController;
-
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 {

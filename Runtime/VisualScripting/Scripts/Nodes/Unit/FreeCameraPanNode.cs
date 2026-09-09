@@ -1,5 +1,4 @@
-﻿using Virtuademy.SDK.Core.CharacterController;
-using Virtuademy.SDK.Core.VisualScripting;
+﻿using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
 

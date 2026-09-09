@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.Transitions;
-
+﻿
 using Unity.VisualScripting;
 
 using UnityEngine;
@@ -37,7 +36,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                f.GetValue<GameObject>(GameobjectVal).GetComponent<AbstractTransitionProvider>().DoTransition(f.GetValue<bool>(Enter));
+                VirtuademyFramework.Current.DoTransition(f.GetValue<GameObject>(GameobjectVal), f.GetValue<bool>(Enter));
 
                 return OutputTrigger;
             });

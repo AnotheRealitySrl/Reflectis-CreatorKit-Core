@@ -1,6 +1,4 @@
-﻿using Virtuademy.SDK.Core.Fade;
-
-using System.Collections;
+﻿using System.Collections;
 
 using Unity.VisualScripting;
 

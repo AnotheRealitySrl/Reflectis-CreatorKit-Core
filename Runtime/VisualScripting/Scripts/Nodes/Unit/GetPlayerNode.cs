@@ -1,5 +1,4 @@
-﻿using Virtuademy.SDK.Core.Avatars;
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting

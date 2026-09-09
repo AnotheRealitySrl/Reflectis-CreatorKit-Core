@@ -1,6 +1,4 @@
-﻿using Virtuademy.SDK.Core;
-using Virtuademy.SDK.Core.CharacterController;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Placeholders
 {
@@ -13,14 +11,12 @@ namespace Virtuademy.CreatorKit.Worlds.Placeholders
 
         public void SetStaticCamera ()
         {
-            InputSettings newInput = new InputSettings(false, false, false, false, false);
-            VirtuademyFramework.Current.DisableAllInputButCamera(newInput);
+            VirtuademyFramework.Current.UseStaticCameraInput(false);
         }
 
         public void SetRotationCamera(bool constrainedRotation)
         {
-            InputSettings newInput = new InputSettings(true, false, false, false, constrainedRotation);
-            VirtuademyFramework.Current.DisableAllInputButCamera(newInput);
+            VirtuademyFramework.Current.UseDragRotationCameraInput(constrainedRotation);
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.VisualScripting;
-
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

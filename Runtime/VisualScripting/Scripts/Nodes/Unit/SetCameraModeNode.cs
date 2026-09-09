@@ -3,8 +3,6 @@
 using System.Collections.Generic;
 
 using Unity.VisualScripting;
-using Virtuademy.SDK.Core.CharacterController;
-using Virtuademy.SDK.Core;
 using System;
 using System.Reflection;
 using System.Linq;
@@ -39,8 +37,15 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             StaticCamera = ValueInput<bool>(nameof(StaticCamera), false).NullMeansSelf();
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {               
-                    InputSettings newInput = new InputSettings(!f.GetValue<bool>(StaticCamera), false, !f.GetValue<bool>(StaticCamera), !f.GetValue<bool>(StaticCamera), f.GetValue<bool>(ConstrainedRotation));
-                    VirtuademyFramework.Current.DisableAllInputButCamera(newInput);                                  
+                    bool constrainRotation = f.GetValue<bool>(ConstrainedRotation);
+                    if (f.GetValue<bool>(StaticCamera))
+                    {
+                        VirtuademyFramework.Current.UseStaticCameraInput(constrainRotation);
+                    }
+                    else
+                    {
+                        VirtuademyFramework.Current.UseFreeCameraInput(constrainRotation);
+                    }
                     return OutputTrigger;
             });
            

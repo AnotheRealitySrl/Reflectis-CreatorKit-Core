@@ -144,17 +144,38 @@ namespace Virtuademy.CreatorKit.Worlds
 
         #region Input and camera
 
-        /// <summary>Enables or disables the player's movement input.</summary>
-        void EnablePlayerMovement(bool enable, InputSettings settings = null);
-
-        /// <summary>The input settings currently in force.</summary>
-        InputSettings GetCurrentInputSettings();
+        /// <summary>
+        /// Enables or disables the player's movement input, leaving every other input setting as it
+        /// is.
+        /// </summary>
+        void EnablePlayerMovement(bool enable);
 
         /// <summary>Restores the project's default input settings.</summary>
         void ApplyDefaultInputSettings();
 
-        /// <summary>Disables every input except the camera, per the given settings.</summary>
-        void DisableAllInputButCamera(InputSettings settings);
+        /// <summary>
+        /// Leaves the camera fixed and takes every input away from the player: no movement, no
+        /// dragging, no zoom.
+        /// </summary>
+        /// <remarks>
+        /// These three <c>Use…CameraInput</c> members replaced a single one that took the
+        /// platform's <c>InputSettings</c> object, which a world then had to fill in — three nodes
+        /// and a placeholder each constructed one out of five booleans whose meaning is not
+        /// discoverable from a graph. Each of the three names an arrangement the platform actually
+        /// supports, and the settings object stays where it belongs, inside the application.
+        /// </remarks>
+        void UseStaticCameraInput(bool constrainRotation);
+
+        /// <summary>
+        /// Lets the player rotate the camera by dragging, and nothing else — no movement, no zoom.
+        /// </summary>
+        void UseDragRotationCameraInput(bool constrainRotation);
+
+        /// <summary>
+        /// Gives the camera back its full range — dragging, third person and zoom — while the
+        /// player still cannot move.
+        /// </summary>
+        void UseFreeCameraInput(bool constrainRotation);
 
         /// <summary>Sets the camera's rotation speed on both axes.</summary>
         void ChangeCameraSpeed(float xSpeed, float ySpeed);
@@ -311,6 +332,16 @@ namespace Virtuademy.CreatorKit.Worlds
                                                Quaternion rotation,
                                                bool onNetwork = true,
                                                object[] data = null);
+
+        /// <summary>
+        /// Runs the transition a <c>GameObject</c> provides, entering it or leaving it.
+        /// </summary>
+        /// <remarks>
+        /// The node used to fetch the platform's transition component off the object itself and
+        /// call it. Which component provides a transition is the application's business; a world
+        /// says "transition this object".
+        /// </remarks>
+        void DoTransition(GameObject target, bool enter);
 
         /// <summary>Hides the contextual menu, whatever it is currently attached to.</summary>
         Task HideContextualMenu();

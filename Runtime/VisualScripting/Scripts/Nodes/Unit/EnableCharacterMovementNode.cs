@@ -1,7 +1,4 @@
-﻿using Virtuademy.SDK.Core.CharacterController;
-
-using Unity.VisualScripting;
-using Virtuademy.SDK.Core;
+﻿using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 {
@@ -29,9 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                InputSettings currentUserSettings = VirtuademyFramework.Current.GetCurrentInputSettings();
-
-                VirtuademyFramework.Current.EnablePlayerMovement(f.GetValue<bool>(Enable), currentUserSettings);
+                VirtuademyFramework.Current.EnablePlayerMovement(f.GetValue<bool>(Enable));
                 return OutputTrigger;
             });
 

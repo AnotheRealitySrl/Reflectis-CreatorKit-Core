@@ -1,6 +1,4 @@
-﻿using Virtuademy.SDK.Core.NetworkingSystem;
-
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 {
