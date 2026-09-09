@@ -17,27 +17,41 @@ namespace Virtuademy.Environments.ScriptingApi
     /// </para>
     /// <para>
     /// <b>Nothing here introduces a capability the platform did not already grant.</b> Every member
-    /// wraps something an authored Visual Scripting graph can already do through a shipped node —
-    /// the graph and the script get the same reach, which is why this surface needs no separate
-    /// capability review, only a review of the mechanism.
+    /// maps onto one of <c>IVirtuademyFramework</c>'s, which was itself derived from what the
+    /// shipped Visual Scripting nodes and placeholders do. A graph and a script get the same reach.
     /// </para>
     /// <para>
-    /// <b>Three constraints the whitelist and the interpreter put on the shape of this API.</b>
-    /// The policy denies the <c>System.Threading</c> prefix, so an interpreted script cannot name
-    /// <c>Task</c> and cannot use <c>async</c>/<c>await</c> — anything asynchronous here takes a
-    /// callback or is driven by a coroutine, never a <c>Task</c>. No type from another first-party
-    /// assembly may appear in a signature, even indirectly: the surface is limited to primitives,
-    /// types this namespace declares, and <c>UnityEngine</c> types. And there are no generic
-    /// members, because a generic instantiated only from interpreted code has no AOT counterpart
-    /// and fails at load rather than at compile time.
+    /// <b>Four constraints the whitelist and the interpreter put on the shape of this API</b>, all
+    /// read off the policy rather than chosen:
     /// </para>
+    /// <list type="bullet">
+    /// <item><description>
+    /// <c>System.Threading</c> is denied, so a script cannot name <c>Task</c> and cannot use
+    /// <c>async</c>/<c>await</c>. Everything asynchronous here takes a <see cref="Action"/> or
+    /// returns nothing.
+    /// </description></item>
+    /// <item><description>
+    /// No first-party type may appear in a signature. That is why nothing here hands back a
+    /// <c>CMUser</c> or a placeholder: the models are flattened to the primitives a script actually
+    /// reads — <see cref="ISessionApi.LocalUserId"/>, <see cref="ISessionApi.LocalUserName"/> — the
+    /// same flattening <c>IVirtuademyFramework</c> did to the nodes' property walks.
+    /// </description></item>
+    /// <item><description>
+    /// No generic member, and no generic delegate over a value type. A generic instantiated only
+    /// from interpreted code has no AOT counterpart and fails at load, not at compile time. This is
+    /// why the other-player events are absent: they would need <c>Action&lt;int&gt;</c>.
+    /// </description></item>
+    /// <item><description>
+    /// No <c>Nullable&lt;T&gt;</c>, for the same reason — hence
+    /// <see cref="ISessionApi.HasShard"/> beside <see cref="ISessionApi.IsShardOpen"/> instead of a
+    /// <c>bool?</c>.
+    /// </description></item>
+    /// </list>
     /// <para>
-    /// <b>Availability.</b> The implementation is installed by the world runtime at startup, before
-    /// the first scene loads. A script running in a project where that runtime is absent gets an
+    /// <b>Availability.</b> The implementation is installed by the application at startup, before
+    /// the first scene loads. A script running where it is absent gets an
     /// <see cref="InvalidOperationException"/> naming the group it asked for, rather than a null
-    /// reference. Each call resolves the system it needs at the moment it is made — exactly as the
-    /// equivalent node does — so calling before the platform has finished booting fails the same
-    /// way a graph would, and not more gracefully.
+    /// reference.
     /// </para>
     /// </remarks>
     public static class World
@@ -51,66 +65,58 @@ namespace Virtuademy.Environments.ScriptingApi
         public static bool IsAvailable => backend != null;
 
         /// <summary>The local player: where they are, what they can do, what is visible.</summary>
-        public static IPlayerApi Player
-        {
-            get
-            {
-                IPlayerApi api = backend?.Player;
-                if (api == null)
-                {
-                    throw Unavailable(nameof(Player));
-                }
-
-                return api;
-            }
-        }
+        public static IPlayerApi Player => Group(backend?.Player, nameof(Player));
 
         /// <summary>The active language and the strings authored against it.</summary>
-        public static ILocalizationApi Localization
-        {
-            get
-            {
-                ILocalizationApi api = backend?.Localization;
-                if (api == null)
-                {
-                    throw Unavailable(nameof(Localization));
-                }
-
-                return api;
-            }
-        }
+        public static ILocalizationApi Localization => Group(backend?.Localization, nameof(Localization));
 
         /// <summary>Read-only facts about the session this world is running in.</summary>
-        public static ISessionApi Session
-        {
-            get
-            {
-                ISessionApi api = backend?.Session;
-                if (api == null)
-                {
-                    throw Unavailable(nameof(Session));
-                }
+        public static ISessionApi Session => Group(backend?.Session, nameof(Session));
 
-                return api;
-            }
-        }
+        /// <summary>Fading the view in and out.</summary>
+        public static IScreenApi Screen => Group(backend?.Screen, nameof(Screen));
+
+        /// <summary>The local player's own saved values, and the leaderboards.</summary>
+        public static ISaveDataApi SaveData => Group(backend?.SaveData, nameof(SaveData));
+
+        /// <summary>Which kind of device the world is running on.</summary>
+        public static IPlatformApi Platform => Group(backend?.Platform, nameof(Platform));
+
+        /// <summary>The help panel, when the host provides one.</summary>
+        public static IHelpApi Help => Group(backend?.Help, nameof(Help));
+
+        /// <summary>The world around the script: placeholders, spawned objects, transitions.</summary>
+        public static ISceneApi Scene => Group(backend?.Scene, nameof(Scene));
+
+        /// <summary>The player's tools and the feedback they produce.</summary>
+        public static IToolsApi Tools => Group(backend?.Tools, nameof(Tools));
 
         /// <summary>
         /// Installs the implementation. Internal by design: a script can reference this assembly in
         /// full, so a public installer would let one script replace the surface every other script
-        /// is calling. Only the world runtime can call it, and the compiler enforces that.
+        /// is calling.
         /// </summary>
         internal static void Install(IWorldBackend implementation)
         {
             backend = implementation ?? throw new ArgumentNullException(nameof(implementation));
         }
 
-        private static InvalidOperationException Unavailable(string group)
+        /// <remarks>
+        /// Generic, and safe to be: it is private and called only from this assembly, which is
+        /// compiled ahead of time. The no-generics rule is about what interpreted code can
+        /// instantiate.
+        /// </remarks>
+        private static T Group<T>(T api, string name) where T : class
         {
-            return new InvalidOperationException(
-                $"World.{group} is not available: the Virtuademy world runtime is not present in " +
-                "this project, or it has not finished starting up. Check World.IsAvailable first " +
-                "if the script can run outside a world.");
+            if (api == null)
+            {
+                throw new InvalidOperationException(
+                    $"World.{name} is not available: the Virtuademy world runtime is not present in " +
+                    "this project, or it has not finished starting up. Check World.IsAvailable first " +
+                    "if the script can run outside one.");
+            }
+
+            return api;
         }
     }
 }

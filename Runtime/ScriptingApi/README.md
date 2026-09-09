@@ -1,4 +1,4 @@
-# Virtuademy.Environments.ScriptingApi
+﻿# Virtuademy.Environments.ScriptingApi
 
 The surface an **interpreted script** in an authored world is allowed to call. One assembly, no
 references of its own, and the only first-party assembly a script may name.
@@ -47,16 +47,24 @@ Three constraints, all discovered from the policy rather than chosen:
 
 | Group | What it covers |
 |---|---|
-| `World.Player` | the local player's transforms, teleport, movement, avatar visibility, camera mode |
-| `World.Localization` | current language, translation by key, language switching, the change event |
-| `World.Session` | read-only session facts: id, multiplayer, master client, player count, shared clock |
+| `World.Player` | transforms, teleport, movement, avatar visibility, and the camera: first/third person, the three input arrangements, speed, moves and pans |
+| `World.Screen` | fading to black and back |
+| `World.Localization` | current and previous language, translation by key, switching, the change event |
+| `World.Session` | session id, multiplayer, master client, shared clock, environment name, shard state, local user id and name |
+| `World.SaveData` | the local player's saved values, and leaderboard submissions |
+| `World.Platform` | VR, WebGL or mobile |
+| `World.Help` | whether a help panel exists, opening and closing it, the closed event |
+| `World.Scene` | placeholder initialisation, spawned-object visibility, transitions, returning to the lobby |
+| `World.Tools` | tool-inventory opacity, answer feedback |
 
 `World.IsAvailable` says whether the runtime is present; the group properties throw
 `InvalidOperationException` with an explanatory message when it is not, rather than returning null.
 
 The implementation lives **outside this package entirely**, in the app:
 `Assets/_Project/ScriptingApi/`, assembly `Virtuademy.Worlds.ScriptingApiBackend`. It installs
-itself before the first scene loads. `World.Install` and `IWorldBackend` are `internal` with
+itself before the first scene loads, and **every member of it delegates to
+`IVirtuademyFramework`** — it resolves no system of its own, because the framework is already the
+one place that knows which system answers what. `World.Install` and `IWorldBackend` are `internal` with
 `InternalsVisibleTo` for that one assembly: a script references this assembly in full, so a public
 installer would let one script replace the surface every other script is calling.
 
@@ -68,24 +76,29 @@ would have shipped it. The creator gets the surface; the platform provides what 
 backend's own namespace, `Virtuademy.Worlds.*`, is on the whitelist's denied list, so a script cannot
 reach around the facade to it.
 
-Each call resolves the system it needs at the moment it is made, exactly as the equivalent node
-does. Calling before the platform has booted therefore fails the same way a graph would — no
-caching, no special grace.
+Nothing is cached: each call goes through the framework to whichever system answers it, at the
+moment it is made, exactly as the equivalent node does. Calling before the platform has booted
+therefore fails the same way a graph would — no special grace.
 
 ## Known gaps
 
-- **This package is not yet distributable, and the facade does not change that.** The Kit's own
-  runtime assembly names `SM` in 56 files and takes eight `I*System` interfaces from
-  `Virtuademy.SDK.Core` — a package §1 does not give creators. Those interfaces are exactly the
-  "world/game contracts (hands, network room, players in scene, ownership, teleport, camera, spawn,
-  sync vars, scene changes, placeholder events, tasks)" §1 assigns to *this* package, so they have to
-  move here and their implementations stay in the app. Until that split happens, the facade is clean
-  but the package around it still reaches for the framework.
-- **Three groups, not the whole node vocabulary.** The shipped nodes cover 149 units in five
-  categories: flow, events, get, expose, create. This is the first slice — player, localization,
-  session facts. Dialogs, tasks, quiz, synced objects and variables, ownership, save data,
-  analytics, spawning, contextual menu, control manager and the interactable events all still have
-  no scripted equivalent.
+- ~~**This package is not yet distributable.**~~ **Closed 2026-09-09.** It said the package named
+  `SM` in 56 files and took eight `I*System` interfaces from `Virtuademy.SDK.Core`. All of that is
+  gone: the framework contract replaced the system resolution, the contracts moved to the main
+  project, and this package no longer references `Virtuademy.SDK.Core` at all.
+- **Nine groups, and still not the whole node vocabulary.** What a script cannot yet do:
+  dialogs, tasks and quiz, synced objects and variables, ownership, analytics, spawning objects,
+  the contextual menu, the control manager, and the interactable events. Several of those are
+  blocked by the surface rules rather than by effort — they would need a placeholder, a DTO or a
+  `CM*` model to cross the boundary, so each needs a flattening decision of its own.
+- **Two members the framework has and this does not**, on purpose. `JoinExperience` takes a
+  `CMExperience` that only `FindExperienceByAddressableName` can produce, and both would have to be
+  flattened together; and `SpawnProjectAsset` returns a `GameObject` through a callback, which means
+  `Action<GameObject>` — a generic instantiation whose AOT counterpart cannot be guaranteed from
+  here.
+- **`PlayerCount` was removed** from the session group. It was on the first slice with no node
+  behind it, which is the rule at the top of this file failing quietly the first time it was
+  applied.
 - **No negative test.** `DllVerification/README.md` asks for red-team cases against the engine, and
   the package plan asks the test-env project to publish a script that deliberately reaches for
   `SM`, `AuthenticationSystem` and `System.IO` and to pass only when the publish is **rejected**.

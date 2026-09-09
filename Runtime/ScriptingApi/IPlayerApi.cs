@@ -1,10 +1,12 @@
+using System;
+
 using UnityEngine;
 
 namespace Virtuademy.Environments.ScriptingApi
 {
     /// <summary>
-    /// The local player. Every member here has a shipped Visual Scripting node behind it, named in
-    /// the remarks so the two surfaces can be kept honest with each other.
+    /// The local player: where they are, what they can do, what is visible, and where the camera
+    /// looks from.
     /// </summary>
     public interface IPlayerApi
     {
@@ -29,29 +31,27 @@ namespace Virtuademy.Environments.ScriptingApi
 
         /// <summary>
         /// Moves the player to <paramref name="destination"/>, fading to black and back so the cut
-        /// is not jarring. <paramref name="onArrived"/> runs once the fade has finished; the fade is
-        /// why this is not instantaneous and why it reports completion instead of returning.
+        /// is not jarring. <paramref name="onArrived"/> runs once the fade has finished.
         /// </summary>
         /// <remarks>Node: <c>Reflectis Character: Teleport</c>.</remarks>
-        void Teleport(Transform destination, System.Action onArrived = null);
+        void Teleport(Transform destination, Action onArrived = null);
 
         /// <summary>
-        /// Moves the player to an explicit pose, with the same fade as
-        /// <see cref="Teleport(Transform, System.Action)"/>. For destinations a script computes
-        /// rather than reads off a scene object.
+        /// Moves the player to an explicit pose, with the same fade. For destinations a script
+        /// computes rather than reads off a scene object.
         /// </summary>
-        void Teleport(Vector3 position, Quaternion rotation, System.Action onArrived = null);
+        void Teleport(Vector3 position, Quaternion rotation, Action onArrived = null);
 
         /// <summary>
-        /// Enables or disables the player's own movement input. Disabling it does not freeze the
-        /// camera — use it for a cutscene the player watches from where they stand.
+        /// Enables or disables the player's own movement input, leaving every other input setting
+        /// alone. Use it for a cutscene the player watches from where they stand.
         /// </summary>
         /// <remarks>Node: <c>Reflectis Character: Enable Movement</c>.</remarks>
         void EnableMovement(bool enable);
 
         /// <summary>
         /// Shows or hides the local player's own avatar meshes. Half-body avatars show hands only,
-        /// so this is what a script uses to get the player's own body out of a close-up shot.
+        /// so this is what gets the player's own body out of a close-up shot.
         /// </summary>
         /// <remarks>Node: <c>Reflectis Character: Enable Mesh</c>.</remarks>
         void ShowOwnAvatar(bool visible);
@@ -63,6 +63,8 @@ namespace Virtuademy.Environments.ScriptingApi
         /// <remarks>Node: <c>Reflectis Scene: Enable Other Players</c>.</remarks>
         void ShowOtherAvatars(bool visible);
 
+        #region The camera
+
         /// <summary>Switches to the first-person camera.</summary>
         /// <remarks>Node: <c>Reflectis Character: Set First Person Camera Mode</c>.</remarks>
         void SetFirstPersonCamera();
@@ -70,5 +72,53 @@ namespace Virtuademy.Environments.ScriptingApi
         /// <summary>Switches to the third-person camera.</summary>
         /// <remarks>Node: <c>Reflectis Character: Set Third Person Camera Mode</c>.</remarks>
         void SetThirdPersonCamera();
+
+        /// <summary>
+        /// Leaves the camera fixed and takes every input away from the player: no movement, no
+        /// dragging, no zoom.
+        /// </summary>
+        /// <remarks>
+        /// These three arrangements are the ones the platform supports, named for what they do. The
+        /// nodes behind them used to build a settings object out of five booleans; that object
+        /// belongs to the application and does not cross this boundary.
+        /// <para>Node: <c>Reflectis Camera: Set camera mode</c> with a static camera.</para>
+        /// </remarks>
+        void UseStaticCamera(bool constrainRotation = false);
+
+        /// <summary>
+        /// Lets the player rotate the camera by dragging, and nothing else — no movement, no zoom.
+        /// </summary>
+        void UseDragRotationCamera(bool constrainRotation = false);
+
+        /// <summary>
+        /// Gives the camera back its full range — dragging, third person and zoom — while the player
+        /// still cannot move.
+        /// </summary>
+        /// <remarks>Node: <c>Reflectis Camera: Set camera mode</c> with a free camera.</remarks>
+        void UseFreeCamera(bool constrainRotation = false);
+
+        /// <summary>Sets the camera's rotation speed on both axes.</summary>
+        /// <remarks>Node: <c>Reflectis Camera: ChangeCameraSpeed</c>.</remarks>
+        void SetCameraSpeed(float xSpeed, float ySpeed);
+
+        /// <summary>
+        /// Moves the camera to a point and leaves it there. <paramref name="onArrived"/> runs when
+        /// it has stopped.
+        /// </summary>
+        /// <remarks>Node: <c>Reflectis Character: Move camera to point</c>.</remarks>
+        void MoveCameraTo(Transform target, Action onArrived = null);
+
+        /// <summary>
+        /// Enters the pan state around <paramref name="target"/> — the player looks at a thing and
+        /// can orbit it. <see cref="ExitCameraPan"/> gives movement back.
+        /// </summary>
+        /// <remarks>Node: <c>Reflectis Character: Pan</c>.</remarks>
+        void PanCameraAround(Transform target, Action onReady = null);
+
+        /// <summary>Leaves the pan state and hands movement back to the player.</summary>
+        /// <remarks>Node: <c>Reflectis Character: Exit Pan</c>.</remarks>
+        void ExitCameraPan(Action onDone = null);
+
+        #endregion
     }
 }
