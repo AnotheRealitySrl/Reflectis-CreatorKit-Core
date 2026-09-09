@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.Fade;
+﻿using Virtuademy.SDK.Core.Fade;
 
 using System.Collections;
 
@@ -35,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             bool fadeDone = false;
 
-            SM.GetSystem<IFadeSystem>().FadeFromBlack(() => fadeDone = true);
+            WorldServices.Get<IFadeSystem>().FadeFromBlack(() => fadeDone = true);
 
             yield return new WaitUntil(() => fadeDone == true);
 

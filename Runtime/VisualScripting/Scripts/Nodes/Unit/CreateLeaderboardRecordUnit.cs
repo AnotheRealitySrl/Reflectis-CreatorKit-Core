@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -33,7 +32,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IClientModelSystem>().CreateLeaderboardRecord(new CMLeaderboardRecord()
+                WorldServices.Get<IClientModelSystem>().CreateLeaderboardRecord(new CMLeaderboardRecord()
                 {
                     LeaderboardKey = f.GetValue<string>(LeaderboardKey),
                     Data = f.GetValue<float>(Data)

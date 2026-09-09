@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.CharacterController;
+﻿using Virtuademy.SDK.Core.CharacterController;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -16,7 +15,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
     {
         protected async override Task AwaitableAction(Flow flow)
         {
-            await SM.GetSystem<ICharacterControllerSystem>().GoToSetMovementState();
+            await WorldServices.Get<ICharacterControllerSystem>().GoToSetMovementState();
         }
     }
 }

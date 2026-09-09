@@ -1,6 +1,5 @@
-using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
 using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -31,7 +30,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            var clientModelSystem = SM.GetSystem<IClientModelSystem>();
+            var clientModelSystem = WorldServices.Get<IClientModelSystem>();
 
             var experience = await clientModelSystem.GetExperienceByAddressableName(flow.GetValue<string>(SceneAddressableName));
 

@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.CharacterController;
+﻿using Virtuademy.SDK.Core.CharacterController;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -30,7 +29,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            await SM.GetSystem<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform));
+            await WorldServices.Get<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform));
         }
     }
 }

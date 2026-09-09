@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.CharacterController;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.SDK.Core.CharacterController;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -23,7 +22,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<ICharacterControllerSystem>().SetDefaultSettingsAsActive();
+                WorldServices.Get<ICharacterControllerSystem>().SetDefaultSettingsAsActive();
                 return OutputTrigger;
             });
         

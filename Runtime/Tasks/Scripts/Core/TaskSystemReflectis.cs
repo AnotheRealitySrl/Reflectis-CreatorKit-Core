@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.SDK.Tasks;
 using Virtuademy.SDK.Tasks.UI;
 
@@ -27,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.Tasks
             }
             get
             {
-                return _isNetworked && SM.GetSystem<IClientModelSystem>().CurrentSession.Multiplayer;
+                return _isNetworked && WorldServices.Get<IClientModelSystem>().CurrentSession.Multiplayer;
             }
         }
 

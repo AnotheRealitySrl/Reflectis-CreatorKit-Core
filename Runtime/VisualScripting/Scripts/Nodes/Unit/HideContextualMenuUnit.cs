@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.Interaction;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.Interaction;
 
 using Unity.VisualScripting;
 
@@ -23,7 +22,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IContextualMenuSystem>().HideContextualMenu();
+                WorldServices.Get<IContextualMenuSystem>().HideContextualMenu();
                 return OutputTrigger;
             });
 

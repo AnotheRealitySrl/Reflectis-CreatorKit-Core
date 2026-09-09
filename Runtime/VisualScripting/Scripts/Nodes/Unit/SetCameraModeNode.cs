@@ -1,5 +1,4 @@
-
-using Virtuademy.SDK.Core.SystemFramework;
+﻿
 
 using System.Collections.Generic;
 
@@ -41,7 +40,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {               
                     InputSettings newInput = new InputSettings(!f.GetValue<bool>(StaticCamera), false, !f.GetValue<bool>(StaticCamera), !f.GetValue<bool>(StaticCamera), f.GetValue<bool>(ConstrainedRotation));
-                    SM.GetSystem<ICharacterControllerSystem>().DisableAllButCamera(newInput);                                  
+                    WorldServices.Get<ICharacterControllerSystem>().DisableAllButCamera(newInput);                                  
                     return OutputTrigger;
             });
            

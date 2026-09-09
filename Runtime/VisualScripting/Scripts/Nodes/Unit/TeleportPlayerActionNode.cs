@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.CharacterController;
+﻿using Virtuademy.SDK.Core.CharacterController;
 using Virtuademy.SDK.Core.Fade;
 
 using System.Collections;
@@ -46,10 +45,10 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             runningFlows.Add(flow);
 
-            SM.GetSystem<IFadeSystem>().FadeToBlack(() =>
+            WorldServices.Get<IFadeSystem>().FadeToBlack(() =>
             {
-                SM.GetSystem<ICharacterControllerSystem>().MoveCharacter(new Pose(flow.GetValue<Transform>(TransformVal).position, flow.GetValue<Transform>(TransformVal).rotation));
-                SM.GetSystem<IFadeSystem>().FadeFromBlack(() => runningFlows.Remove(flow));
+                WorldServices.Get<ICharacterControllerSystem>().MoveCharacter(new Pose(flow.GetValue<Transform>(TransformVal).position, flow.GetValue<Transform>(TransformVal).rotation));
+                WorldServices.Get<IFadeSystem>().FadeFromBlack(() => runningFlows.Remove(flow));
             });
 
             yield return new WaitUntil(() => !runningFlows.Contains(flow));

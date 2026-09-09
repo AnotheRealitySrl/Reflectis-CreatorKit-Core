@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -28,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IClientModelSystem>().DeleteMySaveData(
+                WorldServices.Get<IClientModelSystem>().DeleteMySaveData(
                     f.GetValue<string>(Key));
                 return OutputTrigger;
             });

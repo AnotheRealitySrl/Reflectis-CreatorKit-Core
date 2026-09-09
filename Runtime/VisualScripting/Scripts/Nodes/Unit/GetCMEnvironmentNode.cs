@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 
 using Unity.VisualScripting;
 
@@ -18,7 +17,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CMEnvironment = ValueOutput(nameof(CMEnvironment), (f) => SM.GetSystem<IClientModelSystem>().CurrentSession.Experience.Environment);
+            CMEnvironment = ValueOutput(nameof(CMEnvironment), (f) => WorldServices.Get<IClientModelSystem>().CurrentSession.Experience.Environment);
         }
     }
 }

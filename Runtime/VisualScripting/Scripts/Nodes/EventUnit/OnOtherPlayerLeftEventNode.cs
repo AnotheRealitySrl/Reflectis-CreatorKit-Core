@@ -1,6 +1,5 @@
-using Virtuademy.SDK.Core;
+﻿using Virtuademy.SDK.Core;
 using Virtuademy.SDK.Core.NetworkingSystem;
-using Virtuademy.SDK.Core.SystemFramework;
 using Virtuademy.SDK.Core.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine.Events;
@@ -41,7 +40,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override UnityEvent<PlayerData> GetEvent(GraphReference reference)
         {
-            return SM.GetSystem<INetworkingSystem>().OnOtherPlayerLeaveShard;
+            return WorldServices.Get<INetworkingSystem>().OnOtherPlayerLeaveShard;
         }
 
         protected override (int, string) GetArguments(GraphReference reference, PlayerData eventData)

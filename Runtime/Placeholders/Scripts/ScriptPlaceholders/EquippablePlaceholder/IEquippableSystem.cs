@@ -1,9 +1,8 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Placeholders
 {
-    public interface IEquippableSystem : ISystem
+    public interface IEquippableSystem
     {
         public bool AddItemToContainerInventory(PickablePlaceholder _pickable);
 

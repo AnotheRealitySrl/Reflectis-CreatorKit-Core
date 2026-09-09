@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 
 using Unity.VisualScripting;
 
@@ -18,7 +17,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CMEvent = ValueOutput(nameof(CMEvent), (f) => SM.GetSystem<IClientModelSystem>().CurrentSession);
+            CMEvent = ValueOutput(nameof(CMEvent), (f) => WorldServices.Get<IClientModelSystem>().CurrentSession);
         }
     }
 }

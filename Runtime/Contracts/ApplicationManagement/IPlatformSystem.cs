@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System;
 
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace Virtuademy.SDK.Core.ApplicationManagement
         Mobile = 4,
     }
 
-    public interface IPlatformSystem : ISystem
+    public interface IPlatformSystem
     {
         ESupportedPlatform RuntimePlatform { get; }
 

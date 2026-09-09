@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Collections.Generic;
@@ -36,7 +35,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected async override Task AwaitableAction(Flow flow)
         {
-            cmUserData = await SM.GetSystem<IClientModelSystem>().GetUserData(flow.GetValue<int>(UserID));
+            cmUserData = await WorldServices.Get<IClientModelSystem>().GetUserData(flow.GetValue<int>(UserID));
         }
 
     }

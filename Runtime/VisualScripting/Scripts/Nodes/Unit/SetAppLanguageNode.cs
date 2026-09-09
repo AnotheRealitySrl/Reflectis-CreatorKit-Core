@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.SDK.Core.VisualScripting;
 using Virtuademy.CreatorKit.Worlds.Core.Localization;
 
@@ -35,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<ILocalizationSystem>().SetLanguage(f.GetValue<string>(LanguageChoice));
+                WorldServices.Get<ILocalizationSystem>().SetLanguage(f.GetValue<string>(LanguageChoice));
 
                 return OutputTrigger;
             });

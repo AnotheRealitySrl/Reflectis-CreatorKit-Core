@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.PlatformApi;
+﻿using Virtuademy.SDK.PlatformApi;
 
 using System;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
     /// anywhere. Nothing was using the mutability.
     /// </para>
     /// </remarks>
-    public interface IAnalyticsSystem : ISystem
+    public interface IAnalyticsSystem
     {
         /// <summary>Which verbs belong to which kind of analytic.</summary>
         public static readonly IReadOnlyDictionary<EAnalyticType, IReadOnlyList<EAnalyticVerb>> VerbsTypes =

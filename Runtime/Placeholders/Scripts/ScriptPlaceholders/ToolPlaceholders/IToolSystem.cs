@@ -1,10 +1,9 @@
 ﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
 using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Placeholders
 {
-    public interface IToolSystem : ISystem
+    public interface IToolSystem
     {
         public void InstantiateInventory(ToolInventoryPlaceholder inventoryPlaceholder);
 

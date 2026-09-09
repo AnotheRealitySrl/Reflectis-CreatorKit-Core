@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.PlatformApi;
+﻿using Virtuademy.SDK.PlatformApi;
 
 using System;
 using System.Collections.Generic;
@@ -111,7 +110,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
                     }
                     try
                     {
-                        SM.GetSystem<IAnalyticsSystem>().SendAnalytic(Verb, AnalyticDTO);
+                        WorldServices.Get<IAnalyticsSystem>().SendAnalytic(Verb, AnalyticDTO);
                     }
                     catch (Exception exception)
                     {

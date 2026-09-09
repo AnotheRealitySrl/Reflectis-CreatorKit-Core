@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.Avatars;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.SDK.Core.Avatars;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,7 +20,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => SM.GetSystem<IAvatarSystem>().AvatarInstance.CharacterReference.transform);
+            CharacterTransform = ValueOutput<Transform>(nameof(CharacterTransform), (flow) => WorldServices.Get<IAvatarSystem>().AvatarInstance.CharacterReference.transform);
         }
     }
 }

@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.Avatars;
+﻿using Virtuademy.SDK.Core.Avatars;
 
 using Unity.VisualScripting;
 
@@ -29,7 +28,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IAvatarSystem>().EnableAvatarInstanceMeshes(f.GetValue<bool>(Enable));
+                WorldServices.Get<IAvatarSystem>().EnableAvatarInstanceMeshes(f.GetValue<bool>(Enable));
 
                 return OutputTrigger;
             });

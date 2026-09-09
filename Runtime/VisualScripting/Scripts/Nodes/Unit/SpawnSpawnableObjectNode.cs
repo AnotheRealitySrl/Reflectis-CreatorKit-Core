@@ -1,7 +1,6 @@
-using Virtuademy.CreatorKit.Worlds.Core;
+﻿using Virtuademy.CreatorKit.Worlds.Core;
 using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner;
-using Virtuademy.SDK.Core.SystemFramework;
 using Virtuademy.SDK.Core.VisualScripting;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -59,8 +58,8 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
                 }
             };
 
-            GameObject go = await SM.GetSystem<IObjectSpawnerSystem>().InstantiateObject(
-                EPrefabIdentifier.GeneralContainer, spawnPos, spawnRot, SM.GetSystem<IClientModelSystem>().CurrentSession.Multiplayer, data);
+            GameObject go = await WorldServices.Get<IObjectSpawnerSystem>().InstantiateObject(
+                EPrefabIdentifier.GeneralContainer, spawnPos, spawnRot, WorldServices.Get<IClientModelSystem>().CurrentSession.Multiplayer, data);
         }
     }
 }

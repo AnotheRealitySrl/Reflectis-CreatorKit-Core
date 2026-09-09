@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.Help;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.Help;
 
 using System.Collections;
 
@@ -54,7 +53,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private async void CallAwaitableMethod(Flow flow)
         {
-            var helpSystem = SM.GetSystem<IHelpSystem>();
+            var helpSystem = WorldServices.Get<IHelpSystem>();
 
             if (flow.GetValue<bool>(Enable))
             {

@@ -1,12 +1,11 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System.Threading.Tasks;
 
 using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner
 {
-    public interface IObjectSpawnerSystem : ISystem
+    public interface IObjectSpawnerSystem
     {
         public enum EPrefabIdentifier
         {

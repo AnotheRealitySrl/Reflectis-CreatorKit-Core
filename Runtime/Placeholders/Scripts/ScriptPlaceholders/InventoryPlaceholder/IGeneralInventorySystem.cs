@@ -1,9 +1,8 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Placeholders
 {
-    public interface IGeneralInventorySystem : ISystem
+    public interface IGeneralInventorySystem
     {
         public void SpawnInventories();
 

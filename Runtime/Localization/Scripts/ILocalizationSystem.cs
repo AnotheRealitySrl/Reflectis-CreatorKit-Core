@@ -1,10 +1,9 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine.Events;
 
 namespace Virtuademy.CreatorKit.Worlds.Core.Localization
 {
-    public interface ILocalizationSystem : ISystem
+    public interface ILocalizationSystem
     {
         public UnityEvent<string> OnLanguageChanged { get; set; }
         public string GetCurrentLocalization();

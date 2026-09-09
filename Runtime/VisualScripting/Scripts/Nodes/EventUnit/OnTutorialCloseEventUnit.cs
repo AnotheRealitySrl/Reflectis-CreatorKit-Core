@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.Help;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.Help;
 using Virtuademy.SDK.Core.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine.Events;
@@ -30,14 +29,14 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override UnityEvent GetEvent(GraphReference reference)
         {
-            if (SM.GetSystem<IHelpSystem>() != null)
+            if (WorldServices.Get<IHelpSystem>() != null)
             {
             }
             else
             {
                 return null;
             }
-            return SM.GetSystem<IHelpSystem>().OnFinishedClosing;
+            return WorldServices.Get<IHelpSystem>().OnFinishedClosing;
         }
 
         public override void Uninstantiate(GraphReference instance)

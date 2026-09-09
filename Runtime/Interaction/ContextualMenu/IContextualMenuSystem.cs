@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System.Threading.Tasks;
 
 using UnityEngine;
@@ -8,7 +7,7 @@ using static Virtuademy.CreatorKit.Worlds.Core.Interaction.IContextualMenuManage
 
 namespace Virtuademy.CreatorKit.Worlds.Core.Interaction
 {
-    public interface IContextualMenuSystem : ISystem
+    public interface IContextualMenuSystem
     {
         IContextualMenuController ContextualMenuInstance { get; }
         IContextualMenuManageable SelectedContextualMenuInteractable { get; }

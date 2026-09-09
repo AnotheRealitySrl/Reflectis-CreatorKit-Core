@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.Avatars;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.SDK.Core.Avatars;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,7 +18,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            CharacterHeadReference = ValueOutput<Transform>(nameof(CharacterHeadReference), (flow) => SM.GetSystem<IAvatarSystem>().AvatarInstance.CharacterReference.HeadReference);
+            CharacterHeadReference = ValueOutput<Transform>(nameof(CharacterHeadReference), (flow) => WorldServices.Get<IAvatarSystem>().AvatarInstance.CharacterReference.HeadReference);
         }
     }
 }

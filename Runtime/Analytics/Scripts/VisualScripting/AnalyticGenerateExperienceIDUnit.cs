@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.CreatorKit.Worlds.Analytics;
+﻿using Virtuademy.CreatorKit.Worlds.Analytics;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -45,7 +44,7 @@ namespace Virtuademy.CreatorKit.Worlds.Analytics
             }
             else
             {
-                await SM.GetSystem<IAnalyticsSystem>().GenerateExperienceGUID(desiredKey);
+                await WorldServices.Get<IAnalyticsSystem>().GenerateExperienceGUID(desiredKey);
             }
         }
 

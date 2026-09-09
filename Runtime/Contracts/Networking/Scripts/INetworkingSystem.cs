@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Virtuademy.SDK.Core.NetworkingSystem
 {
-    public interface INetworkingSystem : ISystem
+    public interface INetworkingSystem
     {
 
         /// <summary>

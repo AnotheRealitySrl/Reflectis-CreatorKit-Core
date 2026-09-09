@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 
 using Unity.VisualScripting;
 
@@ -28,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             Data = ValueOutput(nameof(Data),
                 (f) =>
             {
-                return SM.GetSystem<IClientModelSystem>().GetMySaveData(f.GetValue<string>(Key));
+                return WorldServices.Get<IClientModelSystem>().GetMySaveData(f.GetValue<string>(Key));
             });
         }
     }

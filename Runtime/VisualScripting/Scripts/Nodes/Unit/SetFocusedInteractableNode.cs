@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
 
 using Unity.VisualScripting;
 using UnityEngine;
@@ -35,7 +34,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            //SM.GetSystem<VisualScriptingInteractableS>().ChangeCameraSpeed(flow.GetValue<ManipulablePlaceholder>(Interactable));
+            //WorldServices.Get<VisualScriptingInteractableS>().ChangeCameraSpeed(flow.GetValue<ManipulablePlaceholder>(Interactable));
             return outputTrigger;
         }
     }

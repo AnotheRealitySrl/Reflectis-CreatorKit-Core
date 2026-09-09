@@ -1,6 +1,5 @@
-using Virtuademy.CreatorKit.Worlds.Core.Localization;
+﻿using Virtuademy.CreatorKit.Worlds.Core.Localization;
 using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -27,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             Translation = ValueOutput<string>(nameof(Translation), (f) =>
                 {
-                    return SM.GetSystem<ILocalizationSystem>().GetStringFromExternalKey(f.GetValue<string>(Key));
+                    return WorldServices.Get<ILocalizationSystem>().GetStringFromExternalKey(f.GetValue<string>(Key));
                 });
         }
     }

@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
 
 using Unity.VisualScripting;
 using UnityEngine;
@@ -41,7 +40,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            SM.GetSystem<IEquippableSystem>().DisplayFeedback(flow.GetValue<Transform>(SpawnTransform), flow.GetValue<bool>(Correctness));
+            WorldServices.Get<IEquippableSystem>().DisplayFeedback(flow.GetValue<Transform>(SpawnTransform), flow.GetValue<bool>(Correctness));
             return outputTrigger;
         }
     }

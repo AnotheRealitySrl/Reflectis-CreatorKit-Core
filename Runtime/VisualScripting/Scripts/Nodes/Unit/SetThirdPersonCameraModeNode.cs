@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.CharacterController;
+﻿using Virtuademy.SDK.Core.CharacterController;
 
 using Unity.VisualScripting;
 
@@ -22,7 +21,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<ICharacterControllerSystem>().SetThirdPersonCameraMode();
+                WorldServices.Get<ICharacterControllerSystem>().SetThirdPersonCameraMode();
                 return OutputTrigger;
             });
 

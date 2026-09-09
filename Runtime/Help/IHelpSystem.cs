@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System;
 using System.Threading.Tasks;
 
@@ -14,7 +13,7 @@ namespace Virtuademy.CreatorKit.Worlds.Core.Help
         InTransition
     }
 
-    public interface IHelpSystem : ISystem
+    public interface IHelpSystem
     {
         Task CallGetHelp();
 

@@ -1,5 +1,4 @@
 ﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -27,7 +26,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IToolSystem>().SetInventoryAlpha(f.GetValue<float>(Alpha));
+                WorldServices.Get<IToolSystem>().SetInventoryAlpha(f.GetValue<float>(Alpha));
 
                 return OutputTrigger;
             });

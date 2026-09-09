@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.NetworkingSystem;
+﻿using Virtuademy.SDK.Core.NetworkingSystem;
 
 using Unity.VisualScripting;
 
@@ -25,7 +24,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
         {
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                var networkSystem = SM.GetSystem<INetworkingSystem>();
+                var networkSystem = WorldServices.Get<INetworkingSystem>();
                 if (networkSystem != null && networkSystem.IsMasterClient)
                 {
                     return True;

@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -26,7 +25,7 @@ namespace Virtuademy.CreatorKit.Worlds.Core.ClientModels
         Replaced
     }
 
-    public interface IClientModelSystem : ISystem
+    public interface IClientModelSystem
     {
 
         #region Current Client Data

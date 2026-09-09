@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -27,14 +26,14 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                SM.GetSystem<IClientModelSystem>().EnableShard(f.GetValue<bool>(Open));
+                WorldServices.Get<IClientModelSystem>().EnableShard(f.GetValue<bool>(Open));
                 //if (f.GetValue<bool>(Open))
                 //{
-                //    SM.GetSystem<INetworkingSystem>().OpenCurrentShard();
+                //    WorldServices.Get<INetworkingSystem>().OpenCurrentShard();
                 //}
                 //else
                 //{
-                //    SM.GetSystem<INetworkingSystem>().CloseCurrentShard();
+                //    WorldServices.Get<INetworkingSystem>().CloseCurrentShard();
                 //}
                 return OutputTrigger;
             });

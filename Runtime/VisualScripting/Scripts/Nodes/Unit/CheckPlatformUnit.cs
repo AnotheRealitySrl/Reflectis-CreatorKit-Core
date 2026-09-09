@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.ApplicationManagement;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.SDK.Core.ApplicationManagement;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -28,7 +27,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
     {
       InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
       {
-        switch (SM.GetSystem<IPlatformSystem>().RuntimePlatform)
+        switch (WorldServices.Get<IPlatformSystem>().RuntimePlatform)
         {
           case ESupportedPlatform.VR:
             return OutputTriggerVR;
@@ -83,7 +82,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
   //        InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
   //        {
-  //            return supportedPlatformsOutputs[SM.GetSystem<IPlatformSystem>().RuntimePlatform];
+  //            return supportedPlatformsOutputs[WorldServices.Get<IPlatformSystem>().RuntimePlatform];
   //        });
 
   //        Outputs = new List<ControlOutput>();

@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -17,7 +16,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            IsOpen = ValueOutput(nameof(IsOpen), (f) => !SM.GetSystem<IClientModelSystem>().CurrentShard?.IsClosed);
+            IsOpen = ValueOutput(nameof(IsOpen), (f) => !WorldServices.Get<IClientModelSystem>().CurrentShard?.IsClosed);
         }
     }
 }

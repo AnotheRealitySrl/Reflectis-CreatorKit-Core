@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
@@ -17,7 +16,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            SessionId = ValueOutput(nameof(SessionId), (f) => SM.GetSystem<IClientModelSystem>().SessionId);
+            SessionId = ValueOutput(nameof(SessionId), (f) => WorldServices.Get<IClientModelSystem>().SessionId);
         }
     }
 }

@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Placeholders;
-using Virtuademy.SDK.Core.SystemFramework;
+﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
 
 using Unity.VisualScripting;
 using UnityEngine;
@@ -43,7 +42,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         private ControlOutput Output(Flow flow)
         {
-            _addedValue = SM.GetSystem<IEquippableSystem>().AddItemToContainerInventory(flow.GetValue<PickablePlaceholder>(Pickable));
+            _addedValue = WorldServices.Get<IEquippableSystem>().AddItemToContainerInventory(flow.GetValue<PickablePlaceholder>(Pickable));
             return outputTrigger;
         }
     }

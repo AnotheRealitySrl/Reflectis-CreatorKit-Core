@@ -1,5 +1,4 @@
-using Virtuademy.SDK.Core.SystemFramework;
-using Virtuademy.SDK.Core.CharacterController;
+﻿using Virtuademy.SDK.Core.CharacterController;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -56,7 +55,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override async Task AwaitableAction(Flow flow)
         {
-            await SM.GetSystem<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform), flow.GetValue<float>(MaxZoom),
+            await WorldServices.Get<ICharacterControllerSystem>().GoToInteractState(flow.GetValue<Transform>(TargetTransform), flow.GetValue<float>(MaxZoom),
                 flow.GetValue<float>(MinZoom), flow.GetValue<float>(MaxYRotation), flow.GetValue<float>(MinYRotation), flow.GetValue<float>(MaxXRotation), flow.GetValue<float>(MinXRotation), true);
         }
     }
