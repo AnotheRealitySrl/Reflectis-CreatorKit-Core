@@ -1,0 +1,14 @@
+{
+    "name": "Virtuademy.Environments.ScriptingApi",
+    "rootNamespace": "Virtuademy.Environments.ScriptingApi",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
