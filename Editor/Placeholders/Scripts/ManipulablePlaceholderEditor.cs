@@ -25,7 +25,7 @@ namespace Virtuademy.SDK.Environments.Placeholders.Editor
                 }
             }
 
-            if (interactablePlaceholder.ManipulationMode.HasFlag(Core.Interaction.IManipulable.EManipulationMode.Rotate))
+            if (interactablePlaceholder.ManipulationMode.HasFlag(Virtuademy.SDK.Environments.Interaction.IManipulable.EManipulationMode.Rotate))
             {
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("gizmosEnabled"));
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("threshold"));
