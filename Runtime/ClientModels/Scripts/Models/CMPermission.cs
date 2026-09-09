@@ -25,7 +25,11 @@ namespace Virtuademy.CreatorKit.Worlds.Core.ClientModels
             ManageMySessions = 21,
             ManageMyAuthoredExperiences = 22,
             ShowCatalogTab = 23,
-            ShowLeaderboard = 24,
+            // Plural, because the platform's identifier is. As ShowLeaderboard this never matched
+            // the string the server sends, so ClientModelSystem logged "Invalid facet identifier:
+            // ShowLeaderboards" and dropped it on every boot — the permission has never once been
+            // granted to a Unity client.
+            ShowLeaderboards = 24,
             UseEmotes = 25,
             ShowLogo = 26,
             ShowTutorialButton = 27,
