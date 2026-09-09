@@ -30,6 +30,21 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
     ///   3. Run this routine, review the file list, Apply.
     ///   4. Let Unity recompile and reimport, then re-save any still-dirty scenes.
     ///
+    /// Expect a wall of Visual Scripting deserialization errors on the FIRST open after this
+    /// runs, and do not save anything until they stop. A graph records each unit by namespace and
+    /// type, so the rewrite changes what every unit is called; while an asset-import worker
+    /// cannot resolve the new name yet, Visual Scripting swaps the unit for
+    /// <c>Unity.VisualScripting.MissingType</c> and keeps the original in `formerType` /
+    /// `formerValue`. That swap renumbers the JSON `$id`s, and FullSerializer requires a
+    /// definition to precede its reference, so the visible error is
+    /// "Object definition has not been encountered for object with id=N ... have you reordered or
+    /// modified the serialized data?" — alarming, and a consequence of the substitution rather
+    /// than of damaged data. Once the assemblies load, the log says
+    /// "Missing unit type ... was found. Converted ... back", and a second open is clean.
+    ///
+    /// The one way to make it permanent is to SAVE a scene or prefab while a graph is in that
+    /// state: the units are then written out as `MissingType` and the graph really has lost them.
+    ///
     /// The tool is idempotent: a second run finds nothing to change.
     /// </summary>
     public class VirtuademyRenameMigrator : EditorWindow
