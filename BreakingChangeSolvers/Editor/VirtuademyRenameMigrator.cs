@@ -39,11 +39,20 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
     /// definition to precede its reference, so the visible error is
     /// "Object definition has not been encountered for object with id=N ... have you reordered or
     /// modified the serialized data?" — alarming, and a consequence of the substitution rather
-    /// than of damaged data. Once the assemblies load, the log says
-    /// "Missing unit type ... was found. Converted ... back", and a second open is clean.
+    /// than of damaged data. Most of them clear on their own, and the log then says
+    /// "Missing unit type ... was found. Converted ... back".
     ///
-    /// The one way to make it permanent is to SAVE a scene or prefab while a graph is in that
-    /// state: the units are then written out as `MissingType` and the graph really has lost them.
+    /// **Some do not clear by reopening**, because the failure is cached in the asset's imported
+    /// artifact rather than in the asset. Observed on this repo: one prefab kept failing on a
+    /// second open, in the main process while the window layout was being restored, with no
+    /// recovery message at all. What fixes that one is a **Reimport** on the asset (right-click in
+    /// the Project window), which deserializes it afresh with the assemblies loaded. Reopening the
+    /// editor does not.
+    ///
+    /// So the order is: reimport, then OPEN the graph and check the units are real nodes and not
+    /// "Missing Type", and only then save. **Saving first is the one way to make the loss
+    /// permanent**: the units get written out as `MissingType` and the graph really has lost them.
+    /// The asset itself is untouched until that save, so there is no hurry.
     ///
     /// The tool is idempotent: a second run finds nothing to change.
     /// </summary>
