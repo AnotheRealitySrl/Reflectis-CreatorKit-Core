@@ -57,8 +57,8 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
                 }
             };
 
-            GameObject go = await VirtuademyFramework.Current.SpawnObject(
-                EPrefabIdentifier.GeneralContainer, spawnPos, spawnRot, VirtuademyFramework.Current.IsCurrentSessionMultiplayer, data);
+            GameObject go = await VirtuademyFramework.Current.SpawnGeneralContainer(
+                spawnPos, spawnRot, VirtuademyFramework.Current.IsCurrentSessionMultiplayer, data);
         }
     }
 }

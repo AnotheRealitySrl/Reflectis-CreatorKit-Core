@@ -1,7 +1,6 @@
 ﻿using Virtuademy.CreatorKit.Worlds.Analytics;
 using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.CreatorKit.Worlds.Core.Interaction;
-using Virtuademy.CreatorKit.Worlds.Core.ObjectSpawner;
 using Virtuademy.CreatorKit.Worlds.Placeholders;
 using Virtuademy.SDK.Core;
 using Virtuademy.SDK.Core.ApplicationManagement;
@@ -298,23 +297,20 @@ namespace Virtuademy.CreatorKit.Worlds
         /// <summary>Sets the opacity of the tool inventory.</summary>
         void SetInventoryAlpha(float alpha);
 
-        /// <summary>Spawns one of the platform's own prefabs.</summary>
+        /// <summary>
+        /// Spawns the platform's general container at a point, carrying the payload a spawnable
+        /// placeholder needs to resolve itself.
+        /// </summary>
         /// <remarks>
-        /// <c>EPrefabIdentifier</c> stays in this package while <c>IObjectSpawnerSystem</c> lives in
-        /// the main project — a world is authored against the identifier, and the system that
-        /// honours it is the application's. It was *nested inside* that interface until the move,
-        /// and un-nesting it changed a string that
-        /// <c>Assets/_Project/ObjectSpawner/ScriptableObjects/ReflectisPrefabPool.asset</c> stores:
-        /// that asset records its dictionary's key type by name and assembly, and read
-        /// <c>…ObjectSpawner.IObjectSpawnerSystem+EPrefabIdentifier,
-        /// Virtuademy.CreatorKit.Worlds.Core</c>. The asset was migrated in the same commit; the
-        /// namespace and the assembly were left alone so the migration is one substitution.
+        /// The general container is the only one of the platform's prefabs a world ever asks for -
+        /// the spawn node hard-codes it, and even keys its payload "GeneralContainerSpawn" - so this
+        /// takes no prefab identifier. Naming the platform's prefab catalogue here would have put a
+        /// list of fifteen internal prefabs in the authoring surface for the sake of one value.
         /// </remarks>
-        Task<GameObject> SpawnObject(EPrefabIdentifier prefabId,
-                                     Vector3 position,
-                                     Quaternion rotation,
-                                     bool onNetwork = true,
-                                     object[] data = null);
+        Task<GameObject> SpawnGeneralContainer(Vector3 position,
+                                               Quaternion rotation,
+                                               bool onNetwork = true,
+                                               object[] data = null);
 
         /// <summary>Hides the contextual menu, whatever it is currently attached to.</summary>
         Task HideContextualMenu();
