@@ -24,5 +24,7 @@ namespace Virtuademy.Environments.ScriptingApi
         ISceneApi Scene { get; }
 
         IToolsApi Tools { get; }
+
+        ISyncApi Sync { get; }
     }
 }

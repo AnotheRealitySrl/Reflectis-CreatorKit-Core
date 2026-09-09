@@ -92,6 +92,12 @@ namespace Virtuademy.Environments.ScriptingApi
         public static IToolsApi Tools => Group(backend?.Tools, nameof(Tools));
 
         /// <summary>
+        /// Ownership of the objects a multiplayer session keeps in step: asking for the right to
+        /// drive one, giving it back, and hearing when it changed hands.
+        /// </summary>
+        public static ISyncApi Sync => Group(backend?.Sync, nameof(Sync));
+
+        /// <summary>
         /// Installs the implementation. Internal by design: a script can reference this assembly in
         /// full, so a public installer would let one script replace the surface every other script
         /// is calling.

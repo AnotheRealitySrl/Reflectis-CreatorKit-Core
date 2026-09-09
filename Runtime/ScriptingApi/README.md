@@ -67,6 +67,7 @@ Three constraints, all discovered from the policy rather than chosen:
 | `World.Help` | whether a help panel exists, opening and closing it, the closed event |
 | `World.Scene` | placeholder initialisation, spawned-object visibility, transitions, returning to the lobby |
 | `World.Tools` | tool-inventory opacity, answer feedback |
+| `World.Sync` | ownership of synced objects: asking for it, releasing it, and the three events for gained, lost and refused |
 
 `World.IsAvailable` says whether the runtime is present; the group properties throw
 `InvalidOperationException` with an explanatory message when it is not, rather than returning null.
@@ -97,11 +98,30 @@ therefore fails the same way a graph would — no special grace.
   `SM` in 56 files and took eight `I*System` interfaces from `Virtuademy.SDK.Core`. All of that is
   gone: the framework contract replaced the system resolution, the contracts moved to the main
   project, and this package no longer references `Virtuademy.SDK.Core` at all.
-- **Nine groups, and still not the whole node vocabulary.** What a script cannot yet do:
-  dialogs, tasks and quiz, synced objects and variables, ownership, analytics, spawning objects,
-  the contextual menu, the control manager, and the interactable events. Several of those are
-  blocked by the surface rules rather than by effort — they would need a placeholder, a DTO or a
-  `CM*` model to cross the boundary, so each needs a flattening decision of its own.
+- **Ten groups against 125 nodes.** The package ships 94 flow/getter nodes and 31 event nodes;
+  measured 2026-09-09. What a script still cannot do: dialogs, tasks and quiz, **synced
+  variables**, analytics, spawning objects, the contextual menu, the control manager, the
+  interactable and manipulable events, video events, and scene navigation beyond the lobby
+  (`Change Scene`, `Reload Scene`, `Check Scene Availability`). Several are blocked by the surface
+  rules rather than by effort — they would need a placeholder, a DTO or a `CM*` model to cross the
+  boundary, so each needs a flattening decision of its own.
+
+- **The awaitable events are not exposed, and that is a real difference from a graph.** Ten of the
+  31 event nodes are `AwaitableEventUnit`: the platform *waits* for every registered graph before
+  it proceeds. `Scene: On Load`, `On Setup` and `On Unload` are three of them, and the seven quiz
+  ones are the rest. A `event Action` cannot express "the platform is holding for you", so a
+  faithful version needs either a deferral token declared in this namespace or a completion
+  callback — and a handler that forgets to complete hangs the world. Until that decision is made,
+  a scripted world cannot delay setup or teardown the way an authored graph can. `On Setup
+  Completed` is a plain notification and has no such problem, which makes it the obvious next
+  member.
+
+- **`World.Sync` reaches the component, not the framework.** Every other group delegates to
+  `IVirtuademyFramework` for everything. The three ownership operations do not: the nodes behind
+  them (`CheckOwnershipNode`, `RequestOwnershipNode`, `ReleaseOwnershipNode`) call the
+  `SyncedObject` component and resolve no system, so there is nothing for the framework to decide.
+  Only the events go through it, because the signal starts on a per-object bridge in the
+  application and a script has no graph to register against.
 - **Two members the framework has and this does not**, on purpose. `JoinExperience` takes a
   `CMExperience` that only `FindExperienceByAddressableName` can produce, and both would have to be
   flattened together; and `SpawnProjectAsset` returns a `GameObject` through a callback, which means

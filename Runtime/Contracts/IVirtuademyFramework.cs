@@ -272,6 +272,29 @@ namespace Virtuademy.SDK.Environments
         /// <summary>Raised when another player leaves it.</summary>
         UnityEvent<PlayerData> OtherPlayerLeft { get; }
 
+        /// <summary>
+        /// Raised when the local client takes ownership of a synced object, carrying the object.
+        /// </summary>
+        /// <remarks>
+        /// Node: <c>Reflectis Synced Object: On Owner Changed</c>. These three carry a
+        /// <see cref="GameObject"/> rather than the synced-object component because ownership is a
+        /// fact about the object, and every consumer either has the GameObject already or wants it.
+        /// <para>
+        /// Unlike the other events here, the application does not forward these from a system —
+        /// there is no ownership system. The per-object network bridge raises them, which is the
+        /// same signal it already fans out to the graph nodes.
+        /// </para>
+        /// </remarks>
+        UnityEvent<GameObject> SyncedObjectOwnerChanged { get; }
+
+        /// <summary>Raised when the local client loses ownership of a synced object.</summary>
+        /// <remarks>Node: <c>Reflectis Synced Object: On Owner Lost</c>.</remarks>
+        UnityEvent<GameObject> SyncedObjectOwnerLost { get; }
+
+        /// <summary>Raised when a request for ownership was refused.</summary>
+        /// <remarks>Node: <c>Reflectis Synced Object: On Owner Request Failed</c>.</remarks>
+        UnityEvent<GameObject> SyncedObjectOwnershipRequestFailed { get; }
+
         #endregion
 
         #region The world's own lifecycle
