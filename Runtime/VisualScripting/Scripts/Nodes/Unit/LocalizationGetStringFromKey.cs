@@ -1,5 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Localization;
-using Virtuademy.CreatorKit.Worlds.Placeholders;
+﻿using Virtuademy.CreatorKit.Worlds.Placeholders;
 using Unity.VisualScripting;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting

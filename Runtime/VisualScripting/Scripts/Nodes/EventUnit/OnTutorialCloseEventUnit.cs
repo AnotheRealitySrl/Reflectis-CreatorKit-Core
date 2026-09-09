@@ -1,5 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Help;
-using Virtuademy.SDK.Core.VisualScripting;
+﻿using Virtuademy.SDK.Core.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine.Events;
 

@@ -1,6 +1,5 @@
 ﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.SDK.Core.VisualScripting;
-using Virtuademy.CreatorKit.Worlds.Core.Localization;
 
 using System.Collections.Generic;
 using System.Threading.Tasks;

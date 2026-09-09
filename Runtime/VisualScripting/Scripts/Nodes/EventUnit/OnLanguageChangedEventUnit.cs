@@ -1,5 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.Localization;
-using Virtuademy.SDK.Core.VisualScripting;
+﻿using Virtuademy.SDK.Core.VisualScripting;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
