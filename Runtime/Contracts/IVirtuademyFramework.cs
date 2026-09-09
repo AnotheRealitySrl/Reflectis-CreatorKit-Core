@@ -258,6 +258,12 @@ namespace Virtuademy.CreatorKit.Worlds
         bool IsMasterClient { get; }
 
         /// <summary>A clock every client in the session agrees on.</summary>
+        /// <remarks>
+        /// Node: <c>Reflectis Networking: Get current network time</c>. The fallback lives here
+        /// rather than in the node: the shared clock exists only when the application is online
+        /// *and* the session is multiplayer, and deciding that is not something a world should have
+        /// to know.
+        /// </remarks>
         double SharedNetworkTime { get; }
 
         /// <summary>Raised when another player joins the local player's shard.</summary>
@@ -265,6 +271,40 @@ namespace Virtuademy.CreatorKit.Worlds
 
         /// <summary>Raised when another player leaves it.</summary>
         UnityEvent<PlayerData> OtherPlayerLeft { get; }
+
+        #endregion
+
+        #region The world's own lifecycle
+
+        /// <summary>
+        /// Spawns one of the project's addressable assets and parents it where asked.
+        /// </summary>
+        /// <remarks>
+        /// These six members replaced <c>IReflectisApplicationManager.Instance</c>, a static
+        /// singleton on an interface that seven files in this package reached into. It was the same
+        /// arrangement <c>SM.GetSystem&lt;T&gt;()</c> was — a world resolving the application and
+        /// then orchestrating it — and it survived the first pass because a census of
+        /// <c>SM.GetSystem</c> call sites cannot see a static property.
+        /// </remarks>
+        Task<GameObject> SpawnProjectAsset(string objectKey, Transform parent = null);
+
+        /// <summary>
+        /// Resolves the placeholders on <paramref name="target"/>, optionally on its children too.
+        /// </summary>
+        Task InitializePlaceholders(GameObject target, bool includeChildren = false);
+
+        /// <summary>
+        /// Shows or hides the objects spawned into the world, except the ones passed in.
+        /// </summary>
+        void EnableSpawnedObjects(bool enable, List<GameObject> except = null);
+
+        /// <summary>
+        /// Leaves this world and joins <paramref name="experience"/>. False when the join fails.
+        /// </summary>
+        Task<bool> JoinExperience(CMExperience experience, bool multiplayer);
+
+        /// <summary>Leaves this world and returns to the lobby.</summary>
+        Task LoadLobby();
 
         #endregion
 

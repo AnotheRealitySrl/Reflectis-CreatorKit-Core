@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-
+﻿
 using System.Collections.Generic;
 
 using Unity.VisualScripting;
@@ -38,7 +37,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                IReflectisApplicationManager.Instance.EnableSpawnedObjects(f.GetValue<bool>(Enable), new List<GameObject>() { f.stack.AsReference().gameObject });
+                VirtuademyFramework.Current.EnableSpawnedObjects(f.GetValue<bool>(Enable), new List<GameObject>() { f.stack.AsReference().gameObject });
 
                 return OutputTrigger;
             });

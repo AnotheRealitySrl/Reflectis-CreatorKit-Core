@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-using Virtuademy.SDK.Dialogs;
+﻿using Virtuademy.SDK.Dialogs;
 using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.Dialogs
@@ -21,7 +20,7 @@ namespace Virtuademy.CreatorKit.Worlds.Dialogs
         private async void Awake()
         {
             // Instantiates dialog panel as addressable item.
-            GameObject go = await IReflectisApplicationManager.Instance.SpawnProjectAssetAsync("DialogPanel", this.transform);
+            GameObject go = await VirtuademyFramework.Current.SpawnProjectAsset("DialogPanel", this.transform);
             DialogPanelControllerGeneric dialogPanelController = go.GetComponent<DialogPanelControllerGeneric>();
             // Applies setting values and initializes dialog panel.
             dialogPanelController.SetSettings(

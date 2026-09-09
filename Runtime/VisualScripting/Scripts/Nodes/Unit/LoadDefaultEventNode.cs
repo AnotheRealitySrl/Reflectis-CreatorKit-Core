@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-using Virtuademy.SDK.Core.VisualScripting;
+﻿using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
 
@@ -15,7 +14,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
     {
         protected override async Task AwaitableAction(Flow flow)
         {
-            await IReflectisApplicationManager.Instance.LoadLobby();
+            await VirtuademyFramework.Current.LoadLobby();
         }
     }
 }

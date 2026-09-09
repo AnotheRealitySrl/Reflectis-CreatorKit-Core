@@ -1,9 +1,6 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using Unity.VisualScripting;
-using UnityEngine;
 
 namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 {
@@ -22,18 +19,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
         protected override void Definition()
         {
-            NetworkedTime = ValueOutput<double>(nameof(NetworkedTime), f =>
-            {
-                if (IReflectisApplicationManager.Instance.State == SDK.Core.ApplicationManagement.EApplicationState.Online
-                && VirtuademyFramework.Current.IsCurrentSessionMultiplayer)
-                {
-                    return VirtuademyFramework.Current.SharedNetworkTime;
-                }
-                return Time.time;
-            });
-
+            NetworkedTime = ValueOutput<double>(nameof(NetworkedTime), f => VirtuademyFramework.Current.SharedNetworkTime);
         }
     }
 }
-
-

@@ -1,5 +1,4 @@
-using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-
+﻿
 using Unity.VisualScripting;
 
 using UnityEngine;
@@ -36,7 +35,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
 
             InputTrigger = ControlInput(nameof(InputTrigger), (f) =>
             {
-                IReflectisApplicationManager.Instance.InitializeObject(f.GetValue<GameObject>(Target), f.GetValue<bool>(PlaceholdersInChildren));
+                VirtuademyFramework.Current.InitializePlaceholders(f.GetValue<GameObject>(Target), f.GetValue<bool>(PlaceholdersInChildren));
 
                 return OutputTrigger;
             });

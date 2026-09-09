@@ -1,5 +1,4 @@
-﻿using Virtuademy.CreatorKit.Worlds.Core.ApplicationManagement;
-using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
+﻿using Virtuademy.CreatorKit.Worlds.Core.ClientModels;
 using Virtuademy.SDK.Core.VisualScripting;
 
 using System.Threading.Tasks;
@@ -38,7 +37,7 @@ namespace Virtuademy.CreatorKit.Worlds.VisualScripting
             var multiplayer = VirtuademyFramework.Current.IsCurrentEnvironmentMultiplayer;
             if (experience != null)
             {
-                await IReflectisApplicationManager.Instance.JoinExperience(experience, multiplayer);
+                await VirtuademyFramework.Current.JoinExperience(experience, multiplayer);
             }
             /*else
             {
