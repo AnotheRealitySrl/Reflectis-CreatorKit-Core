@@ -54,6 +54,13 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
     /// permanent**: the units get written out as `MissingType` and the graph really has lost them.
     /// The asset itself is untouched until that save, so there is no hurry.
     ///
+    /// **Reimport every affected asset, not one.** Each asset caches its own import artifact, so
+    /// clearing one says nothing about the others — and the errors arrive a few at a time, as
+    /// whatever is loaded happens to touch them, which makes it easy to believe the last reimport
+    /// fixed the problem. It did not; it fixed that asset. Find them all before deciding you are
+    /// done: the editor log names the missing type in a `formerType` entry, and grepping the
+    /// project for that type name lists every asset that records it.
+    ///
     /// The tool is idempotent: a second run finds nothing to change.
     /// </summary>
     public class VirtuademyRenameMigrator : EditorWindow
