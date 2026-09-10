@@ -36,7 +36,6 @@
   ],
   "dependencies": {
     "com.anotherealitysrl.spacs-utility": "1.0.0",
-    "com.anotherealitysrl.virtuademy-sdk-core": "16.0.0",
     "com.anotherealitysrl.virtuademy-sdk-dialogs": "2.1.0",
     "com.anotherealitysrl.virtuademy-sdk-graphs": "2.0.0",
     "com.anotherealitysrl.virtuademy-sdk-interface": "0.3.0",
