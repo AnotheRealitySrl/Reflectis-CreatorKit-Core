@@ -138,7 +138,7 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
         private bool hasScanned;
         private bool deleteLockFile = true;
 
-        [MenuItem("Virtuademy Worlds/Creator Kit update routines/Package rename migration")]
+        [MenuItem("Virtuademy/Update routines/Package rename migration")]
         public static void Open()
         {
             VirtuademyRenameMigrator window = GetWindow<VirtuademyRenameMigrator>(false, WindowTitle, true);

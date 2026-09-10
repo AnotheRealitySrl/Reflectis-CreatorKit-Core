@@ -8,7 +8,7 @@ using UnityEngine;
 
 using Virtuademy.SDK.Environments.Placeholders;
 
-[CreateAssetMenu(menuName = "AnotheReality/Utils/WebViewQuerystringScriptable", fileName = "WebViewQuerystringScriptable")]
+[CreateAssetMenu(menuName = "Virtuademy/Utils/WebViewQuerystringScriptable", fileName = "WebViewQuerystringScriptable")]
 public class WebViewQuerystringScriptable
 #if ODIN_INSPECTOR
     : SerializedScriptableObject

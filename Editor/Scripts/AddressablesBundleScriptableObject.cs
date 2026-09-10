@@ -51,7 +51,7 @@ namespace Virtuademy.SDK.Environments.Editor
 
     #endregion
 
-    [CreateAssetMenu(fileName = "AddressablesBundle", menuName = "Virtuademy/SDK-CreatorKit/Editor-AddressablesBundle", order = 1)]
+    [CreateAssetMenu(fileName = "AddressablesBundle", menuName = "Virtuademy/SDK-Environments/AddressablesBundle", order = 1)]
     public class AddressablesBundleScriptableObject : ScriptableObject
     {
         #region Consts

@@ -32,7 +32,7 @@ namespace Virtuademy.SDK.Environments.HybridCLR.Editor
         private string _status = string.Empty;
         private bool _initialRunDone;
 
-        //[MenuItem("Virtuademy Worlds/Creator Kit/Security/Verify Script DLL…")]
+        //[MenuItem("Virtuademy/Security/Verify script DLL…")]
         public static void Open() => GetWindow<HotUpdateVerifierWindow>("Script DLL Verifier");
 
         private void OnEnable() => _initialRunDone = false;

@@ -1,0 +1,194 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+using UnityEditor;
+
+using UnityEngine;
+
+namespace Virtuademy.BreakingChangeSolvers
+{
+    /// <summary>
+    /// Gathers what the SDK generates in a project into the single <c>Assets/Virtuademy</c>
+    /// folder it is now supposed to have.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// A project used to accumulate three: <c>Assets/CreatorKit</c>, written by the setup
+    /// window; <c>Assets/ReflectisSettings</c>, written at runtime by the tasks video
+    /// controller; and <c>Assets/Virtuademy</c>, written by the tenant switch. The names came
+    /// from two brands and one product name that no longer exists, and nothing but habit put
+    /// them at the root of the project.
+    /// </para>
+    /// <para>
+    /// <b>Nothing breaks if this is never run.</b> Both settings assets are located with
+    /// <c>AssetDatabase.FindAssets("t:…")</c>, which searches the whole project, so the code
+    /// finds them wherever they sit. What running it changes is the folder list a creator sees,
+    /// and it stops the next generate from writing a second copy in the new place while the old
+    /// one lingers.
+    /// </para>
+    /// <para>
+    /// Moves go through <see cref="AssetDatabase.MoveAsset"/>, which carries the <c>.meta</c>
+    /// and therefore the GUID: every reference to a moved asset survives. A move that Unity
+    /// refuses is reported and skipped rather than forced, and the source folder is removed only
+    /// once it holds nothing.
+    /// </para>
+    /// </remarks>
+    public static class VirtuademyFolderMigrator
+    {
+        private const string Root = "Assets/Virtuademy";
+
+        /// <summary>Old folder, new folder. Order matters only for readability.</summary>
+        private static readonly (string from, string to)[] Moves =
+        {
+            ("Assets/CreatorKit/Editor/Settings", Root + "/Editor/Settings"),
+            ("Assets/CreatorKit/Editor/Scripts", Root + "/Editor/Scripts"),
+            ("Assets/ReflectisSettings", Root + "/Settings"),
+        };
+
+        /// <summary>
+        /// Assets whose file name carried a product name that was dropped. Keyed by the name as
+        /// it is after the folder move.
+        /// </summary>
+        private static readonly (string oldName, string newName)[] Renames =
+        {
+            ("CreatorKitSetupConfiguration.asset", "SetupConfiguration.asset"),
+        };
+
+        /// <summary>Folders to delete afterwards, deepest first, and only when empty.</summary>
+        private static readonly string[] Prune =
+        {
+            "Assets/CreatorKit/Editor/Settings",
+            "Assets/CreatorKit/Editor/Scripts",
+            "Assets/CreatorKit/Editor",
+            "Assets/CreatorKit",
+            "Assets/ReflectisSettings",
+        };
+
+        [MenuItem("Virtuademy/Update routines/Consolidate the Virtuademy folder")]
+        public static void Run()
+        {
+            List<string> moved = new();
+            List<string> refused = new();
+
+            try
+            {
+                AssetDatabase.StartAssetEditing();
+
+                foreach ((string from, string to) in Moves)
+                {
+                    if (!AssetDatabase.IsValidFolder(from))
+                    {
+                        continue;
+                    }
+
+                    EnsureFolderExists(to);
+
+                    // Direct children only. A nested folder moves as one asset, with everything
+                    // under it, so recursing would move the same files twice.
+                    foreach (string asset in ChildAssets(from))
+                    {
+                        string target = $"{to}/{Path.GetFileName(asset)}";
+
+                        foreach ((string oldName, string newName) in Renames)
+                        {
+                            if (Path.GetFileName(asset) == oldName)
+                            {
+                                target = $"{to}/{newName}";
+                            }
+                        }
+
+                        if (AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(target) != null)
+                        {
+                            refused.Add($"{asset} — something already sits at {target}");
+                            continue;
+                        }
+
+                        string error = AssetDatabase.MoveAsset(asset, target);
+
+                        if (string.IsNullOrEmpty(error))
+                        {
+                            moved.Add($"{asset} → {target}");
+                        }
+                        else
+                        {
+                            refused.Add($"{asset} — {error}");
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                AssetDatabase.StopAssetEditing();
+                AssetDatabase.Refresh();
+            }
+
+            List<string> pruned = new();
+
+            foreach (string folder in Prune)
+            {
+                if (AssetDatabase.IsValidFolder(folder) && !ChildAssets(folder).Any()
+                    && !AssetDatabase.GetSubFolders(folder).Any()
+                    && AssetDatabase.DeleteAsset(folder))
+                {
+                    pruned.Add(folder);
+                }
+            }
+
+            Report(moved, refused, pruned);
+        }
+
+        /// <summary>Assets directly inside <paramref name="folder"/>, subfolders included.</summary>
+        private static IEnumerable<string> ChildAssets(string folder)
+        {
+            return AssetDatabase.FindAssets(string.Empty, new[] { folder })
+                                .Select(AssetDatabase.GUIDToAssetPath)
+                                .Distinct()
+                                .Where(p => !string.IsNullOrEmpty(p)
+                                            && Path.GetDirectoryName(p)?.Replace('\\', '/') == folder);
+        }
+
+        private static void EnsureFolderExists(string folderPath)
+        {
+            string current = string.Empty;
+
+            foreach (string part in folderPath.Split('/'))
+            {
+                current = string.IsNullOrEmpty(current) ? part : $"{current}/{part}";
+
+                if (!AssetDatabase.IsValidFolder(current))
+                {
+                    AssetDatabase.CreateFolder(Path.GetDirectoryName(current)?.Replace('\\', '/'),
+                                               Path.GetFileName(current));
+                }
+            }
+        }
+
+        private static void Report(List<string> moved, List<string> refused, List<string> pruned)
+        {
+            if (moved.Count == 0 && refused.Count == 0 && pruned.Count == 0)
+            {
+                Debug.Log("[Virtuademy] Nothing to consolidate: no legacy folder in this project.");
+                return;
+            }
+
+            string message = $"[Virtuademy] Consolidated into {Root}: "
+                             + $"{moved.Count} asset(s) moved, {pruned.Count} folder(s) removed."
+                             + Environment.NewLine
+                             + string.Join(Environment.NewLine, moved.Concat(pruned.Select(p => $"removed {p}")));
+
+            if (refused.Count > 0)
+            {
+                Debug.LogWarning(message
+                                 + Environment.NewLine
+                                 + $"{refused.Count} left where they were:"
+                                 + Environment.NewLine
+                                 + string.Join(Environment.NewLine, refused));
+                return;
+            }
+
+            Debug.Log(message);
+        }
+    }
+}

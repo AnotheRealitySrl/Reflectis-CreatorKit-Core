@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Virtuademy.SDK.Environments.Editor
 {
-    [CreateAssetMenu(fileName = "AddressablesSceneList", menuName = "Virtuademy/CreatorKit/Worlds/Core/AddressablesSceneList")]
+    [CreateAssetMenu(fileName = "AddressablesSceneList", menuName = "Virtuademy/SDK-Environments/AddressablesSceneList")]
     public class SceneListScriptableObject : ScriptableObject
     {
         [Serializable]

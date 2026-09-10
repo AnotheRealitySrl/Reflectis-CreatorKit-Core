@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
-    [CreateAssetMenu(menuName = "AnotheReality/Editor/VisualScriptingCustomTypeCollector", fileName = "VisualScriptingCustomTypeCollector")]
+    [CreateAssetMenu(menuName = "Virtuademy/Editor/VisualScriptingCustomTypeCollector", fileName = "VisualScriptingCustomTypeCollector")]
     public class VisualScriptingCustomTypeCollector : ScriptableObject
     {
         [SerializeField]

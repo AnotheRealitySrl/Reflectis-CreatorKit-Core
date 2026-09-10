@@ -45,7 +45,7 @@ namespace Virtuademy.SDK.Environments.Editor
 
         private AddressableAssetSettings settings;
 
-        private const string settings_folder_path = "Assets/CreatorKit/Editor/Settings";
+        private const string settings_folder_path = "Assets/Virtuademy/Editor/Settings";
         private const string addressables_configuration_file = "AddressablesSceneList.asset";
 
         private const string addressables_output_folder = "ServerData";
@@ -123,7 +123,7 @@ namespace Virtuademy.SDK.Environments.Editor
         private VisualElement deployErrorsContainer;
         private ScrollView deployErrorsScrollView;
 
-        [MenuItem("Virtuademy Worlds/Creator Kit/Core/Addressables management")]
+        [MenuItem("Virtuademy/Addressables management")]
         public static void ShowExample()
         {
             AddressablesManagementWindow wnd = GetWindow<AddressablesManagementWindow>();

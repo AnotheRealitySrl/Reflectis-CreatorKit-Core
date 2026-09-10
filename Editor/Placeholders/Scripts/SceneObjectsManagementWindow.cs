@@ -16,7 +16,7 @@ namespace Virtuademy.SDK.Environments.Placeholders.Editor
 
         private Vector2 scrollPosition = Vector2.zero;
 
-        [MenuItem("Virtuademy Worlds/Creator Kit/Core/Scene Objects management")]
+        [MenuItem("Virtuademy/Scene objects management")]
         public static void ShowWindow()
         {
             //Show existing window instance. If one doesn't exist, make one.

@@ -12,7 +12,7 @@ namespace Virtuademy.SDK.Environments.VisualScripting.Editor
 {
     public static class VisualScriptingSetupEditor
     {
-        //[MenuItem("Virtuademy/Reset Visual Scripting Nodes")]
+        //[MenuItem("Virtuademy/Setup/Reset Visual Scripting nodes")]
         public static void ResetNodes()
         {
             while (BoltCore.Configuration.typeOptions.Count > 0)
@@ -31,7 +31,7 @@ namespace Virtuademy.SDK.Environments.VisualScripting.Editor
             }
         }
 
-        [MenuItem("Virtuademy Worlds/Creator Kit/Visual Scripting/Setup Visual Scripting Nodes")]
+        [MenuItem("Virtuademy/Setup/Visual Scripting nodes")]
         public static void Setup()
         {
             if (!VSUsageUtility.isVisualScriptingUsed)
