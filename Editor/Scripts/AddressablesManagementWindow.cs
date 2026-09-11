@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 using Virtuademy.SDK.Environments.Editor;
-using Virtuademy.SDK.PlatformApi;
+using Virtuademy.SDK.ApiData;
 using Virtuademy.SDK.TenantConfiguration;
 using Renci.SshNet;
 using System;

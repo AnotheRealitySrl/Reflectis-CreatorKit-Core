@@ -115,6 +115,8 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
         private static readonly string OldWorldsPackage = "Virtuademy-Creator" + "Kit-Worlds-Core";
         private static readonly string OldWorldsId = "virtuademy-creator" + "kit-worlds-core";
 
+        private static readonly string OldApi = "Virtuademy.SDK.Platform" + "Api";
+
         private static readonly (string oldValue, string newValue)[] EnvironmentsMap =
         {
             (OldWorlds + ".CoreHybridCLREditor", "Virtuademy.SDK.Environments.HybridCLREditor"),
@@ -123,6 +125,18 @@ namespace Virtuademy.SDK.Environments.Installer.Editor
             (OldWorlds, "Virtuademy.SDK.Environments"),
             (OldWorldsPackage, "Virtuademy-SDK-Environments"),
             (OldWorldsId, "virtuademy-sdk-environments"),
+
+            // PlatformApi named a package that no longer exists: it became
+            // Virtuademy-SDK-Library on 2026-09-10, and the DTOs it was named after moved to the
+            // contracts package on the same day. The namespace outlived both.
+            //
+            // The assembly entry has to come first: the old namespace is a prefix of the old
+            // assembly name, so rewriting the shorter one first would land the assembly on the
+            // right value only by luck of the substring — and would do the wrong thing the
+            // moment the two stop sharing a prefix. Neither is spelled out here, for the same
+            // reason the tokens above are split: this file must not match its own table.
+            (OldApi + ".Wire", "Virtuademy.SDK.ApiData.Wire"),
+            (OldApi, "Virtuademy.SDK.ApiData"),
         };
 
         private static readonly string[] TextExtensions =

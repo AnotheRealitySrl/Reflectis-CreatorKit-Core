@@ -3,6 +3,13 @@
 ## v10.0.0
 
 ### Changed
+- **`Virtuademy.SDK.PlatformApi` is `Virtuademy.SDK.ApiData`.** The old name said where the types
+  came from — a package that no longer exists under that name — rather than what they are. Three
+  analytics graphs shipped in this package name two of those types in their serialized `$type`
+  values and were rewritten with them, so they resolve rather than deserialize as `MissingType`.
+- The rename migrator gained the two entries that carry a creator project across that rename. The
+  assembly entry runs before the namespace entry, because the namespace is a prefix of the
+  assembly name and the shorter rule would otherwise consume it.
 - **The package is `Virtuademy-SDK-Environments`.** Business ruled out the name "Creator Kit" and this package was the last place it was a wire symbol rather than prose. The id is `com.anotherealitysrl.virtuademy-sdk-environments`, and the three assemblies are `Virtuademy.SDK.Environments`, `Virtuademy.SDK.Environments.Editor` and `Virtuademy.SDK.Environments.HybridCLREditor`.
 - Every namespace under the old `Virtuademy.CreatorKit.Worlds` prefix moved to `Virtuademy.SDK.Environments`, by one substitution rule. The `.Core.` segment the merge left behind is gone with it: `...Worlds.Core.ClientModels` is now `...Environments.ClientModels`, and the three namespace pairs the merge had left duplicated (`Placeholders`, the package root, `Editor`) are single namespaces again. That merge was verified collision-free first — no two types of the same name met.
 - `Virtuademy.Environments.ScriptingApi` keeps its name. It is the one assembly `policy.json` whitelists by name, that file is deployed, and a published script records it.
